@@ -5,7 +5,7 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  field :name
+  #field :name
 
   ## Database authenticatable
   field :email,              type: String, default: ""
@@ -18,8 +18,8 @@ class User
   ## Rememberable
   field :remember_created_at, type: Time
 
-  validates_presence_of :name
-  validates_uniqueness_of :name, :email, :case_sensitive => false
+  #validates_presence_of :name
+  validates_uniqueness_of :email, :case_sensitive => false
   #attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
   ## Trackable
