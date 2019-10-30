@@ -11,9 +11,7 @@ class FileMonitorJob < RocketJob::Job
 
     Task.all.each do |task|
 
-      puts task.inspect
       url = "sftp://#{task.task_name}"
-      puts url
       IOStreams.
       path(url, username: task.source_username, password: task.source_password).
       each_child(task.source_pattern, directories: false) do |input,attributes|
@@ -45,7 +43,7 @@ class FileMonitorJob < RocketJob::Job
           # Do not replace completed files.
           # Maybe allow replacement after enough time has passed? ex: monthly upload with same file name
           # Or if the file copy job deletes the source on completion that could also work.
-          if task.files[input.to_s][:status] != 'Complete'
+          if task.files[input.to_s].nil? || task.files[input.to_s][:status] != 'Complete'
             # new file seen
             task.files[input.to_s] = {
               size: attributes[:size],
