@@ -60,3 +60,6 @@ gem 'iostreams', git: 'https://github.com/marc/iostreams'
 gem 'rails_semantic_logger'
 gem 'rocketjob', '~> 3.0'
 gem 'rocketjob_mission_control', '~> 3.0'
+
+
+gem 'letter_opener'
