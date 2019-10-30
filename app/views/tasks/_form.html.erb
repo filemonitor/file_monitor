@@ -8,14 +8,22 @@
           <div class="card-body">
             <%= simple_form_for @task do |f| %>
               <%= f.input :task_name %>
+              <div class="panel panel-default mb-8" style="width: 35em;">
+                <div class="panel-body" color="green">
+                  <%= f.input :target_type, collection: ['SFTP', 'S3', 'HTTPS', 'FILE'], wrapper_html: { :style => 'display: inline' } %>
+                  <%= f.input :target_file_format, collection: ['CSV', 'FIXED WIDTH FORMAT', 'JSON', 'PSV'], wrapper_html: { :style => 'display: inline' }%>
+                  <%= f.input :target_stream_type, collection: ['ZIP', 'GZIP', 'BZIP2', 'CSV', 'PGP (Uses GnuPG)'], wrapper_html: { :style => 'display: inline' }%>
+                </div>
+              </div>
               <%= f.input :target_username %>
               <%= f.input :target_password %>
+              <%= f.input :source_type, collection: ['SFTP', 'S3', 'HTTPS', 'FILE'] %>
               <%= f.input :source_username %>
               <%= f.input :source_password %>
               <%= f.input :source_pattern %>
               <div class="form-actions">
                 <%= f.button :submit, 'Create', class: "btn-primary" %>
-                <%= link_to 'Back', tasks_path, class: "btn btn-light"  %>
+                <%= link_to 'Back', tasks_path, class: "btn btn-light" %>
               </div>
             <% end %>
           </div>
