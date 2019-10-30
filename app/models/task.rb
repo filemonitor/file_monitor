@@ -1,7 +1,7 @@
 class Task
   include Mongoid::Document
   field :task_name,          type: String, default: ""
-  field :task_host,          type: String, default: ""
+  field :target_host,          type: String, default: ""
   field :target_protocol,        type: String, default: "SFTP"
   field :target_format,      type: String, default: "AUTO"
   field :target_stream,      type: String, default: "AUTO"
