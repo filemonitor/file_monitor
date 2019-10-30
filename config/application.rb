@@ -24,11 +24,16 @@ module FileMonitor
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-   # config.filter_parameters += [:password, :password_confirmation]
+    # config.filter_parameters += [:password, :password_confirmation]
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    #
+    config.generators do |g|
+      g.orm :mongo_mapper
+    end
+
   end
 end

@@ -1,15 +1,52 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FileMonitor</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>File Monitor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
+<div class="col-13">
   <body>
-    <%= yield %>
+
+  <nav class="navbar navbar-expand-sm navbar-custom">
+    <a href="/" class="navbar-brand">File Monitor</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCustom">
+      <i class="fa fa-bars fa-lg py-1 text-white"></i>
+    </button>
+
+    <div class="navbar-collapse collapse" id="navbarCustom">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" <%= link_to 'New Task', new_task_path %> </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" <%= link_to 'View Task', new_task_path %> </a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav">
+        <a class="nav-item">
+          <% if user_signed_in? %>
+            <a class="nav-link"<%= link_to "Logout", destroy_user_session_path, method: :delete %></a>
+          <% else %>
+            <a class="nav-link" <%= link_to "Sign up", new_user_registration_path %> </a>
+            <a class="nav-link" <%= link_to "Login", new_user_session_path %> </a>
+          <% end %>
+          </ul>
+
+    </div>
+  </nav>
+
+
+  <%= yield %>
+
   </body>
+</div>
 </html>
+

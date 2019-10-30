@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Task name:</strong>
+  <%= @task.task_name %>
+</p>
+
+<p>
+  <strong>Target username:</strong>
+  <%= @task.target_username %>
+</p>
+
+<p>
+  <strong>Target password:</strong>
+  <%= @task.target_password %>
+</p>
+
+<p>
+  <strong>Source username:</strong>
+  <%= @task.source_username %>
+</p>
+
+<p>
+  <strong>Source password:</strong>
+  <%= @task.source_password %>
+</p>
+
+<p>
+  <strong>Source pattern:</strong>
+  <%= @task.source_pattern %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>
