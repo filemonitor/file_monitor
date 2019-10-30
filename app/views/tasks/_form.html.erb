@@ -1,47 +1,25 @@
-<%= form_with(model: task, local: true) do |form| %>
-  <% if task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
-      <ul>
-        <% task.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-7">
+      <div style="margin-top:50px;"></div>
+      <div class="row justify-content-center mb-1">
+        <h3>New Task</h3>
+        <div class="card mb-8" style="width: 100rem;">
+          <div class="card-body">
+            <%= simple_form_for(task, as: task, url: tasks_path(task)) do |f| %>
+              <%= f.input :task_name %>
+              <%= f.input :target_username %>
+              <%= f.input :target_password %>
+              <%= f.input :source_password %>
+              <%= f.input :source_pattern %>
+              <div class="form-actions">
+                <%= f.button :submit, 'Create', class: "btn-primary" %>
+                <%= link_to 'Back', tasks_path, class: "btn btn-light"  %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :task_name %>
-    <%= form.text_field :task_name %>
   </div>
-
-  <div class="field">
-    <%= form.label :target_username %>
-    <%= form.text_field :target_username %>
-  </div>
-
-  <div class="field">
-    <%= form.label :target_password %>
-    <%= form.text_field :target_password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :source_username %>
-    <%= form.text_field :source_username %>
-  </div>
-
-  <div class="field">
-    <%= form.label :source_password %>
-    <%= form.text_field :source_password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :source_pattern %>
-    <%= form.text_field :source_pattern %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
