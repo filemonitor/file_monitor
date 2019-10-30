@@ -1,34 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div style="margin-top:50px;"></div>
 
-<p>
-  <strong>Task name:</strong>
-  <%= @task.task_name %>
-</p>
-
-<p>
-  <strong>Target username:</strong>
-  <%= @task.target_username %>
-</p>
-
-<p>
-  <strong>Target password:</strong>
-  <%= @task.target_password %>
-</p>
-
-<p>
-  <strong>Source username:</strong>
-  <%= @task.source_username %>
-</p>
-
-<p>
-  <strong>Source password:</strong>
-  <%= @task.source_password %>
-</p>
-
-<p>
-  <strong>Source pattern:</strong>
-  <%= @task.source_pattern %>
-</p>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+  <div class="col-sm-5">
+    <div class="card card_space">
+      <div class="card-body">
+        <h6 class="card-title bold">Task Name:</h6>
+        <p class="card-text ligther"><%= @task.task_name %></p>
+        <h6 class="card-title bold">Target Username:</h6>
+        <p class="card-text ligther"><%= @task.target_username %></p>
+        <h6 class="card-title bold">Target Password:</h6>
+        <p class="card-text ligther"><%= @task.target_password %></p>
+        <h6 class="card-title bold">Source Username:</h6>
+        <p class="card-text ligther"><%= @task.source_username %></p>
+        <h6 class="card-title bold">Source Password:</h6>
+        <p class="card-text ligther"><%= @task.source_password %></p>
+        <h6 class="card-title bold">Source Pattern:</h6>
+        <p class="card-text ligther"><%= @task.source_pattern %></p>
+      </div>
+    </div>
+    <br>
+    <div class="form-actions">
+      <%= link_to 'Edit', edit_task_path(@task), class: "btn btn-primary" %>
+      <%= link_to 'Back', tasks_path, class: "btn btn-light"  %>
+    </div>
+  </div>
