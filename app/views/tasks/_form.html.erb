@@ -6,7 +6,7 @@
         <h3>New Task</h3>
         <div class="card mb-8" style="width: 100rem;">
           <div class="card-body">
-            <%= simple_form_for(task, as: task, url: tasks_path(task)) do |f| %>
+            <%= simple_form_for @task do |f| %>
               <%= f.input :task_name %>
               <%= f.input :target_username %>
               <%= f.input :target_password %>
