@@ -8,4 +8,5 @@ class Task
   field :source_password, type: String, default: ""
   field :source_pattern,  type: String, default: ""
 
+  field :files,           type: Hash, default: {}
 end
