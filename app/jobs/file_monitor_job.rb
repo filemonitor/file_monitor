@@ -25,7 +25,8 @@ class FileMonitorJob < RocketJob::Job
             task.files[input.to_s][:status] = 'Complete'
             task.files[input.to_s][:last_checked] = Time.now
 
-            
+            ExampleMailer.sample_email('user').deliver_now
+
             # processing_job = FileCopyJob.create(
             #   task: task,
             #   matched_file: input.to_s
