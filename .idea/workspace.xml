@@ -32,21 +32,21 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Gemfile" value="40" />
-          <entry key="erb" value="213" />
-          <entry key="rb" value="328" />
+          <entry key="erb" value="424" />
+          <entry key="rb" value="402" />
           <entry key="scss" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="RHTML" value="213" />
-          <entry key="Ruby" value="368" />
+          <entry key="RHTML" value="424" />
+          <entry key="Ruby" value="442" />
           <entry key="SCSS" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="erb" value="6" />
+          <entry key="erb" value="7" />
           <entry key="lock" value="1" />
           <entry key="rb" value="15" />
           <entry key="ru" value="1" />
@@ -57,7 +57,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="RHTML" value="6" />
+          <entry key="RHTML" value="7" />
           <entry key="Ruby" value="16" />
           <entry key="SCSS" value="5" />
           <entry key="YAML" value="2" />
@@ -66,14 +66,14 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6872764">
+    <splitter split-orientation="horizontal" split-proportion="0.49882573">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Gemfile">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="706">
-                  <caret line="52" selection-start-line="52" selection-end-line="52" />
+                <state relative-caret-position="640">
+                  <caret line="49" selection-start-line="49" selection-end-line="49" />
                 </state>
               </provider>
             </entry>
@@ -81,8 +81,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Gemfile.lock">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1227">
-                  <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
+                <state relative-caret-position="1359">
+                  <caret line="129" column="16" selection-start-line="129" selection-start-column="16" selection-end-line="129" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -133,24 +133,35 @@
               <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/tasks/_form.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="748">
-                  <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+                <state relative-caret-position="880">
+                  <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/tasks/show.html.erb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="616">
+                  <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/javascript/stylesheets/task.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="66">
-                  <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+                  <caret line="3" selection-start-line="3" selection-end-line="3" />
                 </state>
               </provider>
             </entry>
@@ -173,7 +184,7 @@
             <entry file="file://$PROJECT_DIR$/app/javascript/stylesheets/bootstrap_custom.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="814">
-                  <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+                  <caret line="37" column="42" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
                 </state>
               </provider>
             </entry>
@@ -234,8 +245,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/models/task.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="308">
-                  <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+                <state relative-caret-position="396">
+                  <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
                 </state>
               </provider>
             </entry>
@@ -269,8 +280,8 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/task.rb" />
         <option value="$PROJECT_DIR$/app/javascript/stylesheets/task.scss" />
+        <option value="$PROJECT_DIR$/app/models/task.rb" />
         <option value="$PROJECT_DIR$/app/views/tasks/_form.html.erb" />
       </list>
     </option>
@@ -540,18 +551,18 @@
       <option name="presentableId" value="Default" />
       <updated>1572376409583</updated>
       <workItem from="1572376411063" duration="1292000" />
-      <workItem from="1572378615209" duration="12402000" />
+      <workItem from="1572378615209" duration="15714000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13694000" />
+    <option name="totallyTimeSpent" value="17006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2521" y="-29" width="2413" height="1327" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17460987" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.102066636" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -601,15 +612,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="640">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1227">
-          <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
+        <state relative-caret-position="1359">
+          <caret line="129" column="16" selection-start-line="129" selection-start-column="16" selection-end-line="129" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -686,9 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tasks/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -712,32 +720,44 @@
     <entry file="file://$PROJECT_DIR$/app/javascript/stylesheets/bootstrap_custom.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="814">
-          <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/task.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tasks/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+          <caret line="37" column="42" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/javascript/stylesheets/task.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tasks/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tasks/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/task.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tasks/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

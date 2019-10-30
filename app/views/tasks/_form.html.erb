@@ -8,19 +8,49 @@
           <div class="card-body">
             <%= simple_form_for @task do |f| %>
               <%= f.input :task_name %>
-              <div class="panel panel-default mb-8" style="width: 35em;">
-                <div class="panel-body" color="green">
-                  <%= f.input :target_type, collection: ['SFTP', 'S3', 'HTTPS', 'FILE'], wrapper_html: { :style => 'display: inline' } %>
-                  <%= f.input :target_file_format, collection: ['CSV', 'FIXED WIDTH FORMAT', 'JSON', 'PSV'], wrapper_html: { :style => 'display: inline' }%>
-                  <%= f.input :target_stream_type, collection: ['ZIP', 'GZIP', 'BZIP2', 'CSV', 'PGP (Uses GnuPG)'], wrapper_html: { :style => 'display: inline' }%>
+              <%= f.input :task_host %>
+              <div class='row'>
+                <div class='col-md-4'>
+                  <%= f.input :target_protocol, label: 'Protocol:', collection: ['SFTP', 'S3', 'HTTPS', 'FILE'] %>
+                </div>
+                <div class='col-md-4'>
+                  <%= f.input :target_format, label: 'Format:', collection: ['AUTO', 'CSV', 'FIXED WIDTH FORMAT', 'JSON', 'PSV']%>
+                </div>
+                <div class='col-md-4'>
+                  <%= f.input :target_stream,  label: 'Stream:', collection: ['AUTO', 'ZIP', 'GZIP', 'BZIP2', 'CSV', 'PGP (Uses GnuPG)']%>
                 </div>
               </div>
-              <%= f.input :target_username %>
-              <%= f.input :target_password %>
-              <%= f.input :source_type, collection: ['SFTP', 'S3', 'HTTPS', 'FILE'] %>
-              <%= f.input :source_username %>
+              <div class='row'>
+                <div class='col-md-4'>
+                  <%= f.input :target_username %>
+                </div>
+                <div class='col-md-4'>
+                  <%= f.input :target_password %>
+                </div>
+              </div>
+              <%= f.input :source_host %>
+              <div class='row'>
+                <div class='col-md-4'>
+                  <%= f.input :source_protocol, label: 'Protocol:', collection: ['SFTP', 'S3', 'HTTPS', 'FILE'] %>
+                </div>
+                <div class='col-md-4'>
+                  <%= f.input :source_format, label: 'Format:', collection: ['AUTO', 'CSV', 'FIXED WIDTH FORMAT', 'JSON', 'PSV']%>
+                </div>
+                <div class='col-md-4'>
+                  <%= f.input :source_stream,  label: 'Stream:', collection: ['AUTO', 'ZIP', 'GZIP', 'BZIP2', 'CSV', 'PGP (Uses GnuPG)']%>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='col-md-4'>
+                  <%= f.input :source_username %>
+                </div>
+                <div class='col-md-4'>
               <%= f.input :source_password %>
+                </div>
+                <div class='col-md-4'>
               <%= f.input :source_pattern %>
+                </div>
+              </div>
               <div class="form-actions">
                 <%= f.button :submit, 'Create', class: "btn-primary" %>
                 <%= link_to 'Back', tasks_path, class: "btn btn-light" %>

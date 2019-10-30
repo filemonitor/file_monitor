@@ -61,6 +61,7 @@
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.11.1, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.4.2, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.7.0, RVM: ruby-2.6.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="iostreams (v1.0.0.beta2@096cc1, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.9.1, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-datatables-rails (v3.3.0, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.3.5, RVM: ruby-2.6.2) [gem]" level="application" />
@@ -76,6 +77,8 @@
     <orderEntry type="library" scope="PROVIDED" name="mongo (v2.10.2, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mongoid (v7.0.5, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="msgpack (v1.3.1, RVM: ruby-2.6.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-sftp (v2.1.2, RVM: ruby-2.6.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-ssh (v5.2.0, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.5.2, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.10.4, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, RVM: ruby-2.6.2) [gem]" level="application" />
@@ -106,8 +109,6 @@
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v3.142.6, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="semantic_logger (v4.6.0, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simple_form (v5.0.1, RVM: ruby-2.6.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="spring (v2.1.0, RVM: ruby-2.6.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="spring-watcher-listen (v2.0.1, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v3.7.2, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.2.1, RVM: ruby-2.6.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.20.3, RVM: ruby-2.6.2) [gem]" level="application" />
