@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-7">
-      <div style="margin-top:50px;"></div>
+      <div class="form-margin-top"></div>
       <div class="row justify-content-center mb-1">
         <h3>New Task</h3>
         <div class="card mb-8" style="width: 100rem;">
@@ -10,7 +10,7 @@
               <%= f.input :task_name %>
               <%= f.label 'Target:' %>
               <div class="panel panel-default md-8">
-                <div class="panel-body" style="background: #f2f2f2; padding: 20px" >
+                <div class="panel-body form-panel-body"  >
                   <%= f.input :target_host, label: 'Host:' %>
                   <div class='row'>
                     <div class='col-md-4'>
@@ -35,7 +35,7 @@
               </div>
               <%= f.label 'Source:' %>
               <div class="panel panel-default md-8">
-                <div class="panel-body" style="background: #f2f2f2; padding: 20px" >
+                <div class="panel-body form-panel-body">
               <%= f.input :source_host, label: 'Host:' %>
               <div class='row'>
                 <div class='col-md-4'>
