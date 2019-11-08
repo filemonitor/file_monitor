@@ -25,6 +25,7 @@ class FileMonitorJob < RocketJob::Job
 
             ExampleMailer.sample_email('user').deliver_now
 
+            # TODO: Pass all source and target info to the file copy job.
             # processing_job = FileCopyJob.create(
             #   task: task,
             #   matched_file: input.to_s
