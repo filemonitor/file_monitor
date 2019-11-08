@@ -19,9 +19,11 @@
       <div class='col-md-4'>
         <%= f.input :target_password, label: 'Password:' %>
       </div>
-      <div class='col-md-4'>
-        <%= f.input :source_pattern %>
-      </div>
+      <% if local_assigns[:show_source_pattern] %>
+        <div class='col-md-4'>
+          <%= f.input :source_pattern %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -5,7 +5,7 @@
       <%= f.label 'Target:' %>
       <%= render 'stream_panel', f: f %>
       <%= f.label 'Source:' %>
-      <%= render 'stream_panel', f: f %>
+      <%= render 'stream_panel', f: f , show_source_pattern: true %>
       <div class="form-actions">
         <%= f.button :submit, 'Create', class: "btn-success" %>
         <%= link_to 'Back', tasks_path, class: "btn btn-light" %>
