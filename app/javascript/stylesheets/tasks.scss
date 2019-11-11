@@ -5,7 +5,31 @@
   margin-top: 50px;
 }
 
+.task-margin-bottom {
+  margin-top: 30px;
+}
+
 .form-panel-body {
-  background: #f2f2f2;
+  background: #f8f9fa;
   padding: 20px;
+}
+
+.task-table {
+  width: 100%;
+}
+
+.task-thead {
+  border-bottom: 1px solid #28a744;
+}
+
+td {
+  padding: 7px;
+  text-align: left;
+}
+
+tr:nth-child(even) {background-color: #f8f9fa;}
+
+.task-th {
+  padding: 7px;
+  text-align: left;
 }
