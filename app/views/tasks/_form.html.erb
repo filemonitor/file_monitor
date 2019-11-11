@@ -3,11 +3,11 @@
     <%= simple_form_for @task do |f| %>
       <%= f.input :task_name %>
       <%= f.label 'Target:' %>
-      <%= render 'stream_panel', f: f %>
+      <%= render 'form_target_stream', f: f %>
       <%= f.label 'Source:' %>
-      <%= render 'stream_panel', f: f , show_source_pattern: true %>
+      <%= render 'form_source_stream', f: f %>
       <div class="form-actions">
-        <%= f.button :submit, 'Create', class: "btn-success" %>
+        <%= f.button :submit, class: "btn-success" %>
         <%= link_to 'Back', tasks_path, class: "btn btn-light" %>
       </div>
     <% end %>
