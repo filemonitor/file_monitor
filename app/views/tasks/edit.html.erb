@@ -1,5 +1,12 @@
-
-<%= render 'form', task: @task %>
-
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-7">
+      <div class="form-margin-top"></div>
+      <div class="row justify-content-center mb-1">
+        <%= render 'form', task: @task %>
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Show', @task %> |
+  <%= link_to 'Back', tasks_path %>
+</div>
