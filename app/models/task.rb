@@ -30,5 +30,4 @@ class Task
 
   validates_uniqueness_of :target_password,
                           :source_password
-
 end
