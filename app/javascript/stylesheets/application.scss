@@ -11,19 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  */
+@import './reset.css';
 @import './bootstrap_custom.scss';
-
-.navbar-nav {
-  flex-direction: row;
-}
-
-.nav-link {
-  padding-right: .5rem !important;
-  padding-left: .5rem !important;
-}
-
-/* Fixes dropdown menus placed on the right side */
-.ml-auto .dropdown-menu {
-  left: auto !important;
-  right: 0px;
-}
+@import './header.scss';
+@import './tasks.scss';

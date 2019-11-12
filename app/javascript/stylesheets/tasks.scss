@@ -1,3 +1,35 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.form-margin-top {
+  margin-top: 50px;
+}
+
+.task-margin-bottom {
+  margin-top: 30px;
+}
+
+.form-panel-body {
+  background: #f8f9fa;
+  padding: 20px;
+}
+
+.task-table {
+  width: 100%;
+}
+
+.task-thead {
+  border-bottom: 1px solid #28a744;
+}
+
+td {
+  padding: 7px;
+  text-align: left;
+}
+
+tr:nth-child(even) {background-color: #f8f9fa;}
+
+.task-th {
+  padding: 7px;
+  text-align: left;
+}
