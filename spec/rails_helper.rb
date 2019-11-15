@@ -53,6 +53,8 @@ RSpec.configure do |config|
   config.include Warden::Test::Helpers
 
   config.extend ControllerMacros, type: :controller
+  #TODO this one produces error
+  #config.include Mongoid::Matchers
 
   # Clean/Reset Mongoid DB prior to running each test.
   #
