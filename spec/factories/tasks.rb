@@ -13,9 +13,9 @@ FactoryBot.define do
     source_stream { 'AUTO' }
     source_username { 'Source Username' }
     source_password { 'Source Password' }
-  end
 
-  factory :invalid_task do
-    task_name nil
+    trait :invalid_task do
+      task_name { nil }
+    end
   end
 end
