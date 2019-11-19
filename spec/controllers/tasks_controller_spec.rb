@@ -68,6 +68,27 @@ RSpec.describe TasksController, type: :controller do
 
           expect(response).to redirect_to Task.last
         end
+
+        it 'saves all parameters to the model' do
+          post :create, params: {task: task_params}
+
+          saved_task = Task.last
+
+          expect(saved_task.task_name).to       eq(task_params[:task_name])
+          expect(saved_task.target_host).to     eq(task_params[:target_host])
+          expect(saved_task.target_protocol).to eq(task_params[:target_protocol])
+          expect(saved_task.target_format).to   eq(task_params[:target_format])
+          expect(saved_task.target_stream).to   eq(task_params[:target_stream])
+          expect(saved_task.target_username).to eq(task_params[:target_username])
+          expect(saved_task.target_password).to eq(task_params[:target_password])
+          expect(saved_task.source_host).to     eq(task_params[:source_host])
+          expect(saved_task.source_protocol).to eq(task_params[:source_protocol])
+          expect(saved_task.source_format).to   eq(task_params[:source_format])
+          expect(saved_task.source_stream).to   eq(task_params[:source_stream])
+          expect(saved_task.source_username).to eq(task_params[:source_username])
+          expect(saved_task.source_password).to eq(task_params[:source_password])
+          expect(saved_task.source_pattern).to  eq(task_params[:source_pattern])
+        end
       end
 
       describe "with invalid attributes" do
