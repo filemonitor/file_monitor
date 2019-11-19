@@ -26,3 +26,11 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+.rspec
+.DS_Store
+**/.idea/*
+.idea/file_monitor.iml
+!.idea/codeStyles
+.byebug_history
+
