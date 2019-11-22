@@ -12,6 +12,16 @@
 .form-panel-body {
   background: #f8f9fa;
   padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-control.is-invalid{
+  background-image: none;
+}
+
+.form-control.is-valid{
+  background-image: none;
 }
 
 .task-table {
@@ -33,3 +43,4 @@ tr:nth-child(even) {background-color: #f8f9fa;}
   padding: 7px;
   text-align: left;
 }
+

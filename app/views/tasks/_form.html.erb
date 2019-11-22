@@ -1,7 +1,10 @@
 <div class="card mb-8" style="width: 100rem;">
   <div class="card-body">
     <%= simple_form_for @task do |f| %>
-      <%= f.input :task_name %>
+      <div class="panel-body form-panel-body">
+      <%= f.label :task_name %>
+      <%= f.input_field :task_name %>
+      </div>
       <%= f.label 'Target:' %>
       <%= render 'form_target_stream', f: f %>
       <%= f.label 'Source:' %>
