@@ -22,11 +22,13 @@ class Task
                         :target_format,
                         :target_stream,
                         :target_username,
+                        :target_password,
                         :source_host,
                         :source_protocol,
                         :source_format,
                         :source_stream,
-                        :source_username
+                        :source_username,
+                        :source_password
 
   validates_uniqueness_of :target_password,
                           :source_password

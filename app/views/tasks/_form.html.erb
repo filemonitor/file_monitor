@@ -1,13 +1,19 @@
-<div class="card mb-8" style="width: 100rem;">
+<div class="card mb-8 card-form" style="width: 100rem;">
   <div class="card-body">
     <%= simple_form_for @task do |f| %>
       <div class="panel-body form-panel-body">
-      <%= f.label :task_name %>
-      <%= f.input_field :task_name %>
+        <div class='row'>
+          <div class='col-md-4' class='col-xs-12'>
+            <%= f.label :task_name, class: 'form-label' %>
+          </div>
+          <div class='col-md-8' class='col-xs-12'>
+            <%= f.input_field :task_name, class: 'form-input' %>
+          </div>
+        </div>
       </div>
-      <%= f.label 'Target:' %>
+      <%= f.label 'Target', class: 'form-label' %>
       <%= render 'form_target_stream', f: f %>
-      <%= f.label 'Source:' %>
+      <%= f.label 'Source', class: 'form-label' %>
       <%= render 'form_source_stream', f: f %>
       <div class="form-actions">
         <%= f.button :submit, class: "btn-success" %>

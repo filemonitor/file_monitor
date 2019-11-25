@@ -1,6 +1,10 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.card-form {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .form-margin-top {
   margin-top: 50px;
 }
@@ -9,11 +13,28 @@
   margin-top: 30px;
 }
 
+.form-label {
+  font-weight: 600;
+  color: #4d4d4d;
+  border-bottom: 0px;
+}
+
+abbr, accronym{ text-decoration: none !important; }
+
+.form-input {
+  width: 100%;
+}
+
+.form-section-line {
+  margin-bottom: 20px;
+}
+
+
 .form-panel-body {
   background: #f8f9fa;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
 .form-control.is-invalid{
@@ -23,6 +44,8 @@
 .form-control.is-valid{
   background-image: none;
 }
+
+.form-control
 
 .task-table {
   width: 100%;
