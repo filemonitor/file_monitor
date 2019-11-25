@@ -1,28 +1,30 @@
 <div class="form-margin-top"></div>
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-10">
-      <table class="table">
-        <thead>
+    <div class="card mb-8 card-form">
+      <div class="card-body">
+      <table class='table-striped'>
+        <thead class='task-thead'>
         <tr>
-          <th>Task name</th>
-          <th>Source pattern</th>
-          <th colspan="3"></th>
+          <th class='task-th form-label'>Task name</th>
+          <th class='task-th form-label'>Source pattern</th>
+          <th colspan="3" class='task-th'></th>
         </tr>
         </thead>
 
-        <tbody>
+        <tbody class='task-table-index'>
         <% @tasks.each do |task| %>
-          <tr>
+          <tr class='tr-index'>
             <td><%= task.task_name %></td>
             <td><%= task.source_pattern %></td>
-            <td><%= link_to 'Show', task, :class => "btn btn-secondary btn-sm active"  %>
-            <%= link_to 'Edit', edit_task_path(task), :class => "btn btn-secondary btn-sm active"  %>
-            <%= link_to 'Destroy', task, :class => "btn btn-danger btn-sm active",  method: :delete, data: {confirm: 'Are you sure?'} %></td>
+            <td><%= link_to 'Show', task, :class => "btn btn-secondary btn-sm active"  %></td>
+            <td><%= link_to 'Edit', edit_task_path(task), :class => "btn btn-secondary btn-sm active"  %></td>
+            <td><%= link_to 'Destroy', task, :class => "btn btn-danger btn-sm active",  method: :delete, data: {confirm: 'Are you sure?'} %></td>
           </tr>
         <% end %>
         </tbody>
       </table>
     </div>
+  </div>
   </div>
 </div>

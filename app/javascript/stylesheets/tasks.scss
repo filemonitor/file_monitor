@@ -16,7 +16,6 @@
 .form-label {
   font-weight: 600;
   color: #4d4d4d;
-  border-bottom: 0px;
 }
 
 abbr, accronym{ text-decoration: none !important; }
@@ -51,6 +50,11 @@ abbr, accronym{ text-decoration: none !important; }
   width: 100%;
 }
 
+.task-table-index {
+  border-left: 1px solid #28a744;
+  border-right: 1px solid #28a744;
+}
+
 .task-thead {
   border-bottom: 1px solid #28a744;
 }
@@ -60,7 +64,13 @@ td {
   text-align: left;
 }
 
-tr:nth-child(even) {background-color: #f8f9fa;}
+.tr-index {
+  border-bottom: 1px solid #28a744;
+}
+
+.td-show {
+  border: 1px solid #28a744;
+}
 
 .task-th {
   padding: 7px;
