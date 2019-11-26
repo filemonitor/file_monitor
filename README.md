@@ -4,12 +4,12 @@ TODO list:
 
 Front End 
 
-* Improve design of New Task Form. WIP.
-* Make layout work for all screen sizes.
 * Are we going to have different styles for File Monitor and RJMC?
-* Improve design of Task Index page
 * Improve design of Destroy confirmation modal
 * Add localization
+* Add Travis CI?
+* Add Rubocop
+* Add Footer?
 
 
 
