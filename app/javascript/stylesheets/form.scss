@@ -1,0 +1,24 @@
+$form-color-background: #f8f9fa;
+
+.form-input {
+  width: 100%;
+}
+
+.form-section-line {
+  margin-bottom: 20px;
+}
+
+.form-panel-body {
+  background: $form-color-background;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-control.is-invalid{
+  background-image: none;
+}
+
+.form-control.is-valid{
+  background-image: none;
+}
