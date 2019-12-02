@@ -10,6 +10,7 @@ Front End
 * Add Travis CI?
 * Add Rubocop
 * Add Footer?
+* Look into passwords.
 
 
 
