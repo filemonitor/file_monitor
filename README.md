@@ -5,7 +5,6 @@ TODO list:
 Front End 
 
 * Are we going to have different styles for File Monitor and RJMC?
-* Improve design of Destroy confirmation modal
 * Add localization
 * Add Travis CI?
 * Add Rubocop
