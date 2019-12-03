@@ -2,101 +2,57 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-7">
-      <div class="form-margin-top"></div>
+      <div class="task-margin-top"></div>
       <div class="row justify-content-center mb-1">
-        <div class="card mb-8" style="width: 100rem;">
+        <div class="card mb-8 card-task">
           <div class="card-body">
-            <table class="task-table">
+            <table class='table-striped'>
               <thead class='task-thead'>
               <tr>
-                <th class='task-th'>
-                  <h6 class="card-title bold">Task Name:</h6>
-                </th>
-                <th class='task-th'>
-                  <p class="card-text ligther"><%= @task.task_name %></p>
-                </th>
+                <th class='task-th task-label'>Task Name:</th>
+                <th class='task-th'><%= @task.task_name %></th>
               </tr>
               </thead>
               <tbody>
               <tr>
-                <td>
-                  <h6 class="card-title bold">Target Username:</h6>
-                </td>
-                <td>
-                  <p class="card-text ligther"><%= @task.target_username %></p>
-                </td>
+                <td class='task-td-show task-label'>Target Username:</td>
+                <td class='task-td-show'><%= @task.target_username %></td>
               </tr>
               <tr>
-                <td>
-                  <h6 class="card-title bold">Target Protocol:</h6>
-                </td>
-                <td>
-                  <p class="card-text ligther"><%= @task.target_protocol %></p>
-                </td>
+                <td class='task-td-show task-label'>Target Protocol:</td>
+                <td class='task-td-show'><%= @task.target_protocol %></td>
               </tr>
               <tr>
-                <td>
-                  <h6 class="card-title bold">Target Format:</h6>
-                </td>
-                <td>
-                  <p class="card-text ligther"><%= @task.target_format %></p>
-                </td>
+                <td class='task-td-show task-label'>Target Format:</td>
+                <td class='task-td-show'><%= @task.target_format %></td>
               </tr>
               <tr>
-                <td>
-                  <h6 class="card-title bold">Target Stream:</h6>
-                </td>
-                <td>
-                  <p class="card-text ligther"><%= @task.target_stream %></p>
-                </td>
+                <td class='task-td-show task-label'>Target Stream:</td>
+                <td class='task-td-show'><%= @task.target_stream %></td>
               </tr>
               <tr>
-                <td>
-                  <h6 class="card-title bold">Source Username:</h6>
-                </td>
-                <td>
-                  <p class="card-text ligther"><%= @task.source_username %></p>
-                </td>
+                <td class='task-td-show task-label'>Source Username:</td>
+                <td class='task-td-show'><%= @task.source_username %></td>
               </tr>
               <tr>
-                <td>
-                  <h6 class="card-title bold">Source Protocol:</h6>
-                </td>
-                <td>
-                  <p class="card-text ligther"><%= @task.source_protocol %></p>
-                </td>
+                <td class='task-td-show task-label'>Source Protocol:</td>
+                <td class='task-td-show'><%= @task.source_protocol %></td>
               </tr>
               <tr>
-                <td>
-                  <h6 class="card-title bold">Source Format:</h6>
-                </td>
-                <td>
-                  <p class="card-text ligther"><%= @task.source_format %></p>
-                </td>
+                <td class='task-td-show task-label'>Source Format:</td>
+                <td class='task-td-show'><%= @task.source_format %></td>
               </tr>
               <tr>
-                <td>
-                  <h6 class="card-title bold">Source Stream:</h6>
-                </td>
-                <td>
-                  <p class="card-text ligther"><%= @task.source_stream %></p>
-                </td>
+                <td class='task-td-show task-label'>Source Stream:</td>
+                <td class='task-td-show'><%= @task.source_stream %></td>
               </tr>
               <tr>
-                <td>
-                  <h6 class="card-title bold">Source Pattern:</h6>
-                </td>
-                <td>
-                  <p class="card-text ligther"><%= @task.source_pattern %></p>
-                </td>
+                <td class='task-td-show task-label'>Source Pattern:</td>
+                <td class='task-td-show'><%= @task.source_pattern %></td>
               </tr>
               <tr>
-                <td>
-                  <h6 class="card-title bold">Files:</h6>
-                </td>
-                <td>
-                  <p class="card-text ligther"><%= @task.files.inspect %></p>
-                </td>
+                <td class='task-td-show task-label'>Files:</td>
+                <td class='task-td-show'><%= @task.files.inspect %></td>
               </tr>
               </tbody>
             </table>

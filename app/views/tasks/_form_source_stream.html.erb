@@ -1,26 +1,33 @@
 <div class="panel panel-default md-8">
   <div class="panel-body form-panel-body">
-    <%= f.input :source_host, label: 'Host:' %>
-    <div class='row'>
-      <div class='col-md-4'>
-        <%= f.input :source_protocol, label: 'Protocol:', collection: ['SFTP', 'S3', 'HTTPS', 'FILE'] %>
+    <div class='row form-section-line'>
+      <div class='col-md-4' class='col-xs-12'>
+        <%= f.label :source_host, label: 'Host' %>
       </div>
-      <div class='col-md-4'>
-        <%= f.input :source_format, label: 'Format:', collection: ['AUTO', 'CSV', 'FIXED WIDTH FORMAT', 'JSON', 'PSV'] %>
-      </div>
-      <div class='col-md-4'>
-        <%= f.input :source_stream, label: 'Stream:', collection: ['AUTO', 'ZIP', 'GZIP', 'BZIP2', 'CSV', 'PGP (Uses GnuPG)'] %>
+      <div class='col-md-8' class='col-xs-12'>
+        <%= f.input_field :source_host, class: 'form-input' %>
       </div>
     </div>
     <div class='row'>
-      <div class='col-md-4'>
-        <%= f.input :source_username, label: 'Username:' %>
+      <div class='col-md-4' class='col-xs-12'>
+        <%= f.input :source_protocol, label: 'Protocol', collection: ['SFTP', 'S3', 'HTTPS', 'FILE'] %>
       </div>
-      <div class='col-md-4'>
-        <%= f.input :source_password, label: 'Password:' %>
+      <div class='col-md-4' class='col-xs-12'>
+        <%= f.input :source_format, label: 'Format', collection: ['AUTO', 'CSV', 'FIXED WIDTH FORMAT', 'JSON', 'PSV'] %>
       </div>
-      <div class='col-md-4'>
-        <%= f.input :source_pattern %>
+      <div class='col-md-4' class='col-xs-12'>
+        <%= f.input :source_stream, label: 'Stream', collection: ['AUTO', 'ZIP', 'GZIP', 'BZIP2', 'CSV', 'PGP (Uses GnuPG)'] %>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-4' class='col-xs-12'>
+        <%= f.input :source_username, label: 'Username' %>
+      </div>
+      <div class='col-md-4' class='col-xs-12'>
+        <%= f.input :source_password, label: 'Password' %>
+      </div>
+      <div class='col-md-4' class='col-xs-12'>
+        <%= f.input :source_pattern, label: 'Pattern' %>
       </div>
     </div>
   </div>
