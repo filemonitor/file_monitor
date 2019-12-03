@@ -22,3 +22,14 @@ AllCops:
 Style/BlockComments:
   Exclude:
   - 'spec/spec_helper.rb'
+
+Style/ClassAndModuleChildren:
+  Exclude:
+  - 'test/channels/application_cable/connection_test.rb'
+  - 'test/test_helper.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false

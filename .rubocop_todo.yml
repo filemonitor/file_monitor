@@ -29,33 +29,6 @@ Metrics/MethodLength:
 Metrics/PerceivedComplexity:
   Max: 9
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect, EnforcedStyle.
-# SupportedStyles: nested, compact
-Style/ClassAndModuleChildren:
-  Exclude:
-  - 'test/channels/application_cable/connection_test.rb'
-  - 'test/test_helper.rb'
-
-# Offense count: 12
-Style/Documentation:
-  Exclude:
-  - 'spec/**/*'
-  - 'test/**/*'
-  - 'app/controllers/application_controller.rb'
-  - 'app/controllers/tasks_controller.rb'
-  - 'app/helpers/application_helper.rb'
-  - 'app/helpers/task_helper.rb'
-  - 'app/helpers/tasks_helper.rb'
-  - 'app/jobs/file_copy_job.rb'
-  - 'app/jobs/file_monitor_job.rb'
-  - 'app/mailers/application_mailer.rb'
-  - 'app/mailers/example_mailer.rb'
-  - 'app/models/task.rb'
-  - 'app/models/user.rb'
-  - 'config/application.rb'
-
 #  Offense count: 1
 #  Configuration parameters: AllowIfModifier.
 Style/IfInsideElse:
