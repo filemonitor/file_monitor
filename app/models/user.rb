@@ -21,7 +21,7 @@ class User
   field :remember_created_at, type: Time
 
   # validates_presence_of :name
-  validates_uniqueness_of :email, case_sensitive: false
+  validates :email, uniqueness: { case_sensitive: false }
   # attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
   ## Trackable

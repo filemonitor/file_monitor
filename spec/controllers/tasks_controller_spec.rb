@@ -9,8 +9,8 @@ RSpec.describe TasksController, type: :controller do
     login_user
 
     describe 'GET #index' do
-      it 'should have a current_user' do
-        expect(subject.current_user).to_not eq(nil)
+      it 'has a current_user' do
+        expect(subject.current_user).not_to eq(nil)
       end
 
       it 'returns a success response' do
@@ -42,7 +42,7 @@ RSpec.describe TasksController, type: :controller do
 
       it 'renders :show view and returns success' do
         expect(response).to render_template :show
-        expect(response).to have_http_status(200)
+        expect(response).to have_http_status(:ok)
       end
     end
 
@@ -51,7 +51,7 @@ RSpec.describe TasksController, type: :controller do
         get :new
 
         expect(response).to render_template :new
-        expect(response).to have_http_status(200)
+        expect(response).to have_http_status(:ok)
       end
     end
 
@@ -99,7 +99,7 @@ RSpec.describe TasksController, type: :controller do
         it 'does not save new task' do
           expect {
             post :create, params: {task: invalid_task_params}
-          }.to_not change(Task, :count)
+          }.not_to change(Task, :count)
         end
 
         it 're-renders the new page' do
@@ -148,8 +148,8 @@ RSpec.describe TasksController, type: :controller do
         it 'does not change attributes' do
           assigns(:task).should eq(task)
           task.reload
-          expect(task.task_name).to_not eq('')
-          expect(task.source_host).to_not eq('Updated Host')
+          expect(task.task_name).not_to eq('')
+          expect(task.source_host).not_to eq('Updated Host')
         end
 
         it 'redirects to edit page' do

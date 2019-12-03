@@ -18,20 +18,20 @@ class Task
   field :source_pattern,  type: String, default: ''
   field :files,           type: Hash, default: {}
 
-  validates_presence_of :task_name,
-                        :target_host,
-                        :target_protocol,
-                        :target_format,
-                        :target_stream,
-                        :target_username,
-                        :target_password,
-                        :source_host,
-                        :source_protocol,
-                        :source_format,
-                        :source_stream,
-                        :source_username,
-                        :source_password
+  validates :task_name,
+            :target_host,
+            :target_protocol,
+            :target_format,
+            :target_stream,
+            :target_username,
+            :target_password,
+            :source_host,
+            :source_protocol,
+            :source_format,
+            :source_stream,
+            :source_username,
+            :source_password, presence: true
 
-  validates_uniqueness_of :target_password,
-                          :source_password
+  validates :target_password,
+            :source_password, uniqueness: true
 end

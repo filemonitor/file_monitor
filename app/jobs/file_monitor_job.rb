@@ -19,7 +19,7 @@ class FileMonitorJob < RocketJob::Job
           # if the current remote file size matches the last seen size
           if attributes[:size] == task.files[input.to_s][:size]
             task.files[input.to_s][:status] = 'Complete'
-            task.files[input.to_s][:last_checked] = Time.now
+            task.files[input.to_s][:last_checked] = Time.zone.now
 
             ExampleMailer.sample_email('user').deliver_now
 
@@ -34,7 +34,7 @@ class FileMonitorJob < RocketJob::Job
             # size changed
             task.files[input.to_s] = {
               size: attributes[:size],
-              last_checked: Time.now,
+              last_checked: Time.zone.now,
               status: 'Watching'
             }
           end
@@ -46,7 +46,7 @@ class FileMonitorJob < RocketJob::Job
             # new file seen
             task.files[input.to_s] = {
               size: attributes[:size],
-              last_checked: Time.now,
+              last_checked: Time.zone.now,
               status: 'Watching'
             }
           end
