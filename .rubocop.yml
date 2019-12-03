@@ -18,3 +18,7 @@ AllCops:
   - 'tmp/**/*'
   - 'config/initializers/simple_form_bootstrap.rb'
   - 'config/initializers/simple_form.rb'
+
+Style/BlockComments:
+  Exclude:
+  - 'spec/spec_helper.rb'

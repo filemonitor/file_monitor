@@ -33,7 +33,7 @@ RSpec.describe TasksController, type: :controller do
 
     describe 'GET #show' do
       before do
-        get :show, params: {id: task.id}
+        get :show, params: { id: task.id }
       end
 
       it 'assigns correct object' do
@@ -60,19 +60,19 @@ RSpec.describe TasksController, type: :controller do
         let(:task_params) { FactoryBot.attributes_for(:task) }
 
         it 'creates new task' do
-          expect {
-            post :create, params: {task: task_params}
-          }.to change(Task, :count).by(1)
+          expect do
+            post :create, params: { task: task_params }
+          end.to change(Task, :count).by(1)
         end
 
         it 'redirects to index page' do
-          post :create, params: {task: task_params}
+          post :create, params: { task: task_params }
 
           expect(response).to redirect_to Task.last
         end
 
         it 'saves all parameters to the model' do
-          post :create, params: {task: task_params}
+          post :create, params: { task: task_params }
 
           saved_task = Task.last
 
@@ -97,13 +97,13 @@ RSpec.describe TasksController, type: :controller do
         let(:invalid_task_params) { FactoryBot.attributes_for(:task, :invalid_task) }
 
         it 'does not save new task' do
-          expect {
-            post :create, params: {task: invalid_task_params}
-          }.not_to change(Task, :count)
+          expect do
+            post :create, params: { task: invalid_task_params }
+          end.not_to change(Task, :count)
         end
 
         it 're-renders the new page' do
-          post :create, params: {task: invalid_task_params}
+          post :create, params: { task: invalid_task_params }
 
           expect(response).to render_template :new
         end
@@ -161,14 +161,14 @@ RSpec.describe TasksController, type: :controller do
         it 'deletes the task' do
           task = create(:task)
 
-          expect {
-            delete :destroy, params: {id: task.id}
-          }.to change(Task, :count).by(-1)
+          expect do
+            delete :destroy, params: { id: task.id }
+          end.to change(Task, :count).by(-1)
         end
 
         it 'redirect to index page' do
           task = create(:task)
-          delete :destroy, params: {id: task.id}
+          delete :destroy, params: { id: task.id }
 
           expect(response).to redirect_to tasks_url
         end
