@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ExampleMailer < ApplicationMailer
-  default from: "from@example.com"
+  default from: 'from@example.com'
 
   def sample_email(user)
     @user = user

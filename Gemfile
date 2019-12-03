@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -22,19 +24,20 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'mongoid'
 gem 'bson_ext'
 gem 'devise'
+gem 'mongoid'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'rubocop', '~> 0.77.0', require: false
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :test do
@@ -45,28 +48,27 @@ group :test do
   gem 'webdrivers'
   # There may be other lines in this block already. Simply append the following after:
   %w[rspec-core rspec-expectations rspec-mocks rspec-support].each do |lib|
-    gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
+    gem lib, git: "https://github.com/rspec/#{lib}.git", branch: 'master'
   end
-  gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails', branch: '4-0-maintenance' # Previously '4-0-dev' branch
-  gem 'factory_bot_rails'
   gem 'database_cleaner'
+  gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+  gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails', branch: '4-0-maintenance' # Previously '4-0-dev' branch
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # UI gems
+gem 'bootstrap-table-rails'
 gem 'jquery-rails'
 gem 'simple_form'
-gem 'bootstrap-table-rails'
 
 # RocketJob gems
-gem 'net-sftp'
 gem 'iostreams', git: 'https://github.com/marc/iostreams'
+gem 'net-sftp'
 gem 'rails_semantic_logger'
 gem 'rocketjob', '~> 3.0'
 gem 'rocketjob_mission_control', '~> 3.0'
-
 
 gem 'letter_opener'

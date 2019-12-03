@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe TasksController, type: :controller do
@@ -91,7 +93,7 @@ RSpec.describe TasksController, type: :controller do
         end
       end
 
-      describe "with invalid attributes" do
+      describe 'with invalid attributes' do
         let(:invalid_task_params) { FactoryBot.attributes_for(:task, :invalid_task) }
 
         it 'does not save new task' do
@@ -112,9 +114,9 @@ RSpec.describe TasksController, type: :controller do
       describe 'valid attributes' do
         before do
           put :update, params: {
-            id:   task.id,
+            id: task.id,
             task: {
-              task_name:   'Updated Task',
+              task_name: 'Updated Task',
               source_host: 'Updated Host'
             }
           }
@@ -135,9 +137,9 @@ RSpec.describe TasksController, type: :controller do
       describe 'invalid attributes' do
         before do
           put :update, params: {
-            id:   task.id,
+            id: task.id,
             task: {
-              task_name:   '',
+              task_name: '',
               source_host: 'Updated Host'
             }
           }

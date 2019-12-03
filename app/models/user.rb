@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User
   include Mongoid::Document
   # Include default devise modules. Others available are:
@@ -5,11 +7,11 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  #field :name
+  # field :name
 
   ## Database authenticatable
-  field :email,              type: String, default: ""
-  field :encrypted_password, type: String, default: ""
+  field :email,              type: String, default: ''
+  field :encrypted_password, type: String, default: ''
 
   ## Recoverable
   field :reset_password_token,   type: String
@@ -18,9 +20,9 @@ class User
   ## Rememberable
   field :remember_created_at, type: Time
 
-  #validates_presence_of :name
-  validates_uniqueness_of :email, :case_sensitive => false
-  #attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  # validates_presence_of :name
+  validates_uniqueness_of :email, case_sensitive: false
+  # attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
   ## Trackable
   # field :sign_in_count,      type: Integer, default: 0

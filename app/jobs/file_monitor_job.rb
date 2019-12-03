@@ -1,21 +1,19 @@
+# frozen_string_literal: true
+
 require 'iostreams'
 require 'net/sftp'
 
 class FileMonitorJob < RocketJob::Job
-
-  self.description         = "File Monitor Job"
+  self.description         = 'File Monitor Job'
   self.destroy_on_complete = false
   self.collect_output      = false
 
   def perform
-
     Task.all.each do |task|
-
       url = "sftp://#{task.task_name}"
-      IOStreams.
-      path(url, username: task.source_username, password: task.source_password).
-      each_child(task.source_pattern, directories: false) do |input,attributes|
-
+      IOStreams
+        .path(url, username: task.source_username, password: task.source_password)
+        .each_child(task.source_pattern, directories: false) do |input, attributes|
         # if the file is already being watched...
         if task.files[input.to_s] && task.files[input.to_s][:status] == 'Watching'
           # if the current remote file size matches the last seen size
@@ -53,11 +51,8 @@ class FileMonitorJob < RocketJob::Job
             }
           end
         end
-
       end
       task.save
-  
-      end
-
+    end
   end
 end
