@@ -1,7 +1,7 @@
-<div class="card mb-8 card-task" style="width: 100rem;">
-  <div class="card-body">
+<div class='card mb-8 card-task' style='width: 100rem;'>
+  <div class='card-body'>
     <%= simple_form_for @task do |f| %>
-      <div class="panel-body form-panel-body">
+      <div class='panel-body form-panel-body'>
         <div class='row'>
           <div class='col-md-4' class='col-xs-12'>
             <%= f.label :task_name, class: 'task-label' %>
@@ -15,9 +15,9 @@
       <%= render 'form_target_stream', f: f %>
       <%= f.label 'Source', class: 'task-label' %>
       <%= render 'form_source_stream', f: f %>
-      <div class="form-actions">
-        <%= f.button :submit, class: "btn-success" %>
-        <%= link_to 'Back', tasks_path, class: "btn btn-light" %>
+      <div class='form-actions'>
+        <%= f.button :submit, class: 'btn-success' %>
+        <%= link_to 'Back', tasks_path, class: 'btn btn-light' %>
       </div>
     <% end %>
   </div>
