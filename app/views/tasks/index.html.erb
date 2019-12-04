@@ -1,14 +1,14 @@
-<div class="task-margin-top"></div>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="card mb-8 card-task">
-      <div class="card-body">
+<div class='task-margin-top'></div>
+<div class='container'>
+  <div class='row justify-content-center'>
+    <div class='card mb-8 card-task'>
+      <div class='card-body'>
         <table class='table-striped'>
           <thead class='task-thead'>
           <tr>
             <th class='task-th task-label'>Task name</th>
             <th class='task-th task-label'>Source pattern</th>
-            <th colspan="3" class='task-th'></th>
+            <th colspan='3' class='task-th'></th>
           </tr>
           </thead>
 
@@ -17,9 +17,9 @@
             <tr class='task-tr-index'>
               <td><%= task.task_name %></td>
               <td><%= task.source_pattern %></td>
-              <td><%= link_to 'Show', task, :class => "btn btn-secondary btn-sm active" %></td>
-              <td><%= link_to 'Edit', edit_task_path(task), :class => "btn btn-secondary btn-sm active" %></td>
-              <td><%= link_to 'Destroy', task, :class => "btn btn-danger btn-sm active", :data => {:toggle => "modal", :target => "#exampleModal#{task.id}"} %></td>
+              <td><%= link_to 'Show', task, :class => 'btn btn-secondary btn-sm active' %></td>
+              <td><%= link_to 'Edit', edit_task_path(task), :class => 'btn btn-secondary btn-sm active' %></td>
+              <td><%= link_to 'Destroy', task, :class => 'btn btn-danger btn-sm active', :data => {:toggle => 'modal', :target => "#exampleModal#{task.id}"} %></td>
 
               <%= render 'layouts/delete_confirmation_modal', task: task %>
             </tr>

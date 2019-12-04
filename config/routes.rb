@@ -1,5 +1,6 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
+Rails.application.routes.draw do
   resources :tasks
 
   root 'tasks#index'
@@ -11,5 +12,4 @@ Rails.application.routes.draw do
   end
 
   mount RocketJobMissionControl::Engine => 'rocketjob'
-
 end

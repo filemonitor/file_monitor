@@ -1,0 +1,35 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+- rubocop-rails
+- rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+  - '*.gemspec'
+  - '.git/**/*'
+  - 'Rakefile'
+  - 'bin/**/*'
+  - 'db/**/*'
+  - 'lib/**/*'
+  - 'log/**/*'
+  - 'node_modules/**/*'
+  - 'tmp/**/*'
+  - 'config/initializers/simple_form_bootstrap.rb'
+  - 'config/initializers/simple_form.rb'
+
+Style/BlockComments:
+  Exclude:
+  - 'spec/spec_helper.rb'
+
+Style/ClassAndModuleChildren:
+  Exclude:
+  - 'test/channels/application_cable/connection_test.rb'
+  - 'test/test_helper.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
