@@ -11,9 +11,9 @@ class FileMonitorJob < RocketJob::Job
   def perform
     Task.all.each do |task|
       url = "sftp://#{task.task_name}"
-      IOStreams
-        .path(url, username: task.source_username, password: task.source_password)
-        .each_child(task.source_pattern, directories: false) do |input, attributes|
+      IOStreams.
+        path(url, username: task.source_username, password: task.source_password).
+        each_child(task.source_pattern, directories: false) do |input, attributes|
         # if the file is already being watched...
         if task.files[input.to_s] && task.files[input.to_s][:status] == 'Watching'
           # if the current remote file size matches the last seen size
