@@ -70,7 +70,7 @@ gem 'simple_form'
 
 # File storage
 gem 'aws-sdk-s3', '~> 1.43'
-gem 'iostreams'
+gem "iostreams", git: "https://github.com/rocketjob/iostreams.git"
 
 # RocketJob gems
 # gem 'iostreams', git: 'https://github.com/marc/iostreams'

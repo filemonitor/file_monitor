@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/rocketjob/iostreams.git
+  revision: 9bb447c97f9b616e0b2fc92dac8d69e3b5e1396e
+  specs:
+    iostreams (1.0.0.beta7)
+
+GIT
   remote: https://github.com/rspec/rspec-core.git
   revision: e82281aafc5b2263a6cfa718766117639158525e
   branch: master
@@ -174,7 +180,6 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
-    iostreams (1.0.0.beta6)
     jaro_winkler (1.5.4)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
@@ -377,7 +382,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_bot_rails
-  iostreams
+  iostreams!
   jbuilder (~> 2.7)
   jquery-rails
   letter_opener

@@ -50,18 +50,4 @@ describe Task do
   it 'is invalid without source username' do
     expect(build(:task, source_username: '')).not_to be_valid
   end
-
-  it 'has unique target password' do
-    create(:task)
-    expect(
-      build(:task, task_name: 'Second Task', source_password: 'New Source Password')
-    ).not_to be_valid
-  end
-
-  it 'has unique source password' do
-    create(:task)
-    expect(
-      build(:task, task_name: 'Second Task', target_password: 'New Target Password')
-    ).not_to be_valid
-  end
 end

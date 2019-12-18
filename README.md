@@ -7,10 +7,14 @@ Front End
 * Are we going to have different styles for File Monitor and RJMC?
 * Add localization
 * Add Travis CI?
-* Add Rubocop
 * Add Footer?
-* Look into passwords.
-
+* Look into passwords
+* Review UI: host, task_name, pattern, switch source and target?
+* Conditional switch between username/password and access keys in UI
+  we can still use username/password, or can add access_key_id, secret_access_key
+  to task table
+* modify Files part of UI: nested table instead of inspect, fix sizing 
+* add SymmetricEncryption/ SecretConfig
 
 
 This README would normally document whatever steps are necessary to get the
