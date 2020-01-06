@@ -27,6 +27,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bson_ext'
 gem 'devise'
 gem 'mongoid'
+# Encryption
+gem 'symmetric-encryption', '~> 4.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -66,11 +68,15 @@ gem 'bootstrap-table-rails'
 gem 'jquery-rails'
 gem 'simple_form'
 
+# File storage
+gem 'aws-sdk-s3', '~> 1.43'
+gem "iostreams", git: "https://github.com/rocketjob/iostreams.git"
+
 # RocketJob gems
-gem 'iostreams', git: 'https://github.com/marc/iostreams'
+# gem 'iostreams', git: 'https://github.com/marc/iostreams'
 gem 'net-sftp'
 gem 'rails_semantic_logger'
-gem 'rocketjob', '~> 3.0'
-gem 'rocketjob_mission_control', '~> 3.0'
+gem 'rocketjob', '~> 5.0.0.beta4'
+gem 'rocketjob_mission_control'
 
 gem 'letter_opener'

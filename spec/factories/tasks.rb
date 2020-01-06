@@ -2,20 +2,20 @@
 
 FactoryBot.define do
   factory :task do
-    task_name { 'Task Name' }
-    target_host { 'Target Host' }
-    target_protocol { 'SFTP' }
+    task_name { 'test' }
+    target_host { 'filemonitor' }
+    target_protocol { 'S3' }
     target_format { 'AUTO' }
     target_stream { 'AUTO' }
-    target_username { 'Target Username' }
-    target_password { 'Target Password' }
-    source_host { 'Source Host' }
+    target_username { 'target_username' }
+    target_password { SecureRandom.base64(8) }
+    source_host { 'sftp.release.clarity.net' }
     source_protocol { 'SFTP' }
     source_format { 'AUTO' }
     source_stream { 'AUTO' }
-    source_username { 'Source Username' }
-    source_password { 'Source Password' }
-    source_pattern { '' }
+    source_username { 'source_username' }
+    source_password { SecureRandom.base64(8) }
+    source_pattern { 'test/*' }
 
     trait :invalid_task do
       task_name { nil }

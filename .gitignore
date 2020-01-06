@@ -34,3 +34,7 @@ yarn-debug.log*
 !.idea/codeStyles
 .byebug_history
 
+# Ignore development files
+jobs_examples.rb
+test1.csv
+

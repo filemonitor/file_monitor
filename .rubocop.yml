@@ -19,6 +19,10 @@ AllCops:
   - 'config/initializers/simple_form_bootstrap.rb'
   - 'config/initializers/simple_form.rb'
 
+Layout/DotPosition:
+  AutoCorrect: true
+  EnforcedStyle: trailing
+
 Style/BlockComments:
   Exclude:
   - 'spec/spec_helper.rb'
