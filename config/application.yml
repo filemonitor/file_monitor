@@ -1,0 +1,10 @@
+development:
+  symmetric_encryption:
+    key:     TJMAXEVGMTIzNDU2Nzg5MEFCQ0RFRjEyMzQ1Njc22TB=
+    iv:      TJMAXEVGMTIzNDU2Nzg5MB==
+    version: 1
+test:
+  symmetric_encryption:
+    key:     TJMAXEVGMTIzNDU2Nzg5MEFCQ0RFRjEyMzQ1Njc22TB=
+    iv:      TJMAXEVGMTIzNDU2Nzg5MB==
+    version: 1

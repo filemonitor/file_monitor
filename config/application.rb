@@ -22,8 +22,18 @@ Bundler.require(*Rails.groups)
 
 module FileMonitor
   class Application < Rails::Application
+
+    if Rails.env.development? || Rails.env.test?
+      # Use application config file
+      config.secret_config.use :file
+    else
+      # Read configuration from AWS SSM Parameter Store
+      config.secret_config.use :ssm
+    end
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+
 
     # config.filter_parameters += [:password, :password_confirmation]
 
