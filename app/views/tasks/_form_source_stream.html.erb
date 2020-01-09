@@ -25,6 +25,7 @@
       </div>
       <div class='col-md-4' class='col-xs-12'>
         <%= f.input :source_password, label: 'Password' %>
+        <%= f.full_error :encrypted_source_password, class: 'task-error' %>
       </div>
       <div class='col-md-4' class='col-xs-12'>
         <%= f.input :source_pattern, label: 'Pattern' %>

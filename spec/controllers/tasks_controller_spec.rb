@@ -20,7 +20,13 @@ RSpec.describe TasksController, type: :controller do
 
       it 'displays tasks' do
         task1 = create(:task)
-        task2 = create(:task, task_name: 'Task 2', target_password: 'target2', source_password: 'source2')
+        task2 = create(
+          :task,
+          task_name: 'Task 2',
+          encrypted_target_password: SymmetricEncryption.encrypt('target2'),
+          encrypted_source_password: SymmetricEncryption.encrypt('source2')
+        )
+
         get :index
         assigns(:tasks).should eq([task1, task2])
       end
@@ -64,39 +70,47 @@ RSpec.describe TasksController, type: :controller do
     end
 
     describe 'POST #create with valid attributes' do
-      let(:task_params) { FactoryBot.attributes_for(:task) }
+      before do
+        # have to do hash manipulations, bc parameters have unencrypted fields
+        # but the model has encrypted fields.
+        @task_params = FactoryBot.attributes_for(:task)
+        @task_params.delete(:encrypted_target_password)
+        @task_params.delete(:encrypted_source_password)
+        @task_params[:target_password] = SecureRandom.base64(8)
+        @task_params[:source_password] = SecureRandom.base64(8)
+      end
 
       it 'creates new task' do
         expect do
-          post :create, params: { task: task_params }
+          post :create, params: { task: @task_params }
         end.to change(Task, :count).by(1)
       end
 
       it 'redirects to index page' do
-        post :create, params: { task: task_params }
+        post :create, params: { task: @task_params }
 
         expect(response).to redirect_to Task.last
       end
 
       it 'saves all parameters to the model' do
-        post :create, params: { task: task_params }
+        post :create, params: { task: @task_params }
 
         saved_task = Task.last
 
-        expect(saved_task.task_name).to eq(task_params[:task_name])
-        expect(saved_task.target_host).to eq(task_params[:target_host])
-        expect(saved_task.target_protocol).to eq(task_params[:target_protocol])
-        expect(saved_task.target_format).to eq(task_params[:target_format])
-        expect(saved_task.target_stream).to eq(task_params[:target_stream])
-        expect(saved_task.target_username).to eq(task_params[:target_username])
-        expect(saved_task.target_password).to eq(task_params[:target_password])
-        expect(saved_task.source_host).to eq(task_params[:source_host])
-        expect(saved_task.source_protocol).to eq(task_params[:source_protocol])
-        expect(saved_task.source_format).to eq(task_params[:source_format])
-        expect(saved_task.source_stream).to eq(task_params[:source_stream])
-        expect(saved_task.source_username).to eq(task_params[:source_username])
-        expect(saved_task.source_password).to eq(task_params[:source_password])
-        expect(saved_task.source_pattern).to eq(task_params[:source_pattern])
+        expect(saved_task.task_name).to eq(@task_params[:task_name])
+        expect(saved_task.target_host).to eq(@task_params[:target_host])
+        expect(saved_task.target_protocol).to eq(@task_params[:target_protocol])
+        expect(saved_task.target_format).to eq(@task_params[:target_format])
+        expect(saved_task.target_stream).to eq(@task_params[:target_stream])
+        expect(saved_task.target_username).to eq(@task_params[:target_username])
+        expect(saved_task.encrypted_target_password).to eq(SymmetricEncryption.encrypt(@task_params[:target_password]))
+        expect(saved_task.source_host).to eq(@task_params[:source_host])
+        expect(saved_task.source_protocol).to eq(@task_params[:source_protocol])
+        expect(saved_task.source_format).to eq(@task_params[:source_format])
+        expect(saved_task.source_stream).to eq(@task_params[:source_stream])
+        expect(saved_task.source_username).to eq(@task_params[:source_username])
+        expect(saved_task.encrypted_source_password).to eq(SymmetricEncryption.encrypt(@task_params[:source_password]))
+        expect(saved_task.source_pattern).to eq(@task_params[:source_pattern])
       end
     end
 

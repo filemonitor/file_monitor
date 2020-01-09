@@ -8,13 +8,13 @@ FactoryBot.define do
     target_format { 'AUTO' }
     target_stream { 'AUTO' }
     target_username { 'target_username' }
-    target_password { SecureRandom.base64(8) }
+    encrypted_target_password { SymmetricEncryption.encrypt(SecureRandom.base64(8)) }
     source_host { 'sftp.release.clarity.net' }
     source_protocol { 'SFTP' }
     source_format { 'AUTO' }
     source_stream { 'AUTO' }
     source_username { 'source_username' }
-    source_password { SecureRandom.base64(8) }
+    encrypted_source_password { SymmetricEncryption.encrypt(SecureRandom.base64(8)) }
     source_pattern { 'test/*' }
 
     trait :invalid_task do
