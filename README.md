@@ -15,6 +15,7 @@ Front End
   to task table
 * modify Files part of UI: nested table instead of inspect, fix sizing 
 * add SymmetricEncryption/ SecretConfig
+* How to clean up jobs? I had to go in rails console, otherwise I would have to remove 500 FileMonitorJobs one by one.
 
 
 This README would normally document whatever steps are necessary to get the
