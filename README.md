@@ -14,7 +14,6 @@ Front End
   we can still use username/password, or can add access_key_id, secret_access_key
   to task table
 * modify Files part of UI: nested table instead of inspect, fix sizing 
-* add SymmetricEncryption/ SecretConfig
 * How to clean up jobs? I had to go in rails console, otherwise I would have to remove 500 FileMonitorJobs one by one.
 
 
