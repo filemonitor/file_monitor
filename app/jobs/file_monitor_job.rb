@@ -23,26 +23,27 @@ class FileMonitorJob < RocketJob::Job
       args = source_credentials(task)
 
       IOStreams.path(url, args).
-        each_child(task.source_pattern, directories: false) do |input|
+        each_child(task.source_pattern, directories: false) do |input, attributes|
         # if the file is already being watched...
         if task.files[input.to_s] && task.files[input.to_s][:status] == 'Watching'
           # if the current remote file size matches the last seen size
-          if File.size(input.to_s) == task.files[input.to_s][:size]
+          if attributes[:size] == task.files[input.to_s][:size]
+
+            RocketJob::Jobs::CopyFileJob.create!(
+              source_url:  input.to_s,
+              source_args: { username: task.source_username, encrypted_password: task.encrypted_source_password },
+              target_url:  target_url(task, input),
+              target_args: { access_key_id: task.target_username, encrypted_secret_access_key: task.encrypted_target_password }
+            )
+
             task.files[input.to_s][:status]       = 'Complete'
             task.files[input.to_s][:last_checked] = Time.zone.now
 
             ExampleMailer.sample_email('user').deliver_now
-
-            RocketJob::Jobs::CopyFileJob.create!(
-              source_url:  input.to_s,
-              source_args: { username: task.source_username, password: task.source_password, },
-              target_url:  target_url(task, input),
-              target_args: { access_key_id: task.target_username, secret_access_key: task.target_password }
-            )
           else
             # size changed
             task.files[input.to_s] = {
-              size:         File.size(input.to_s),
+              size:         attributes[:size],
               last_checked: Time.zone.now,
               status:       'Watching'
             }
@@ -54,7 +55,7 @@ class FileMonitorJob < RocketJob::Job
           if task.files[input.to_s].nil? || task.files[input.to_s][:status] != 'Complete'
             # new file seen
             task.files[input.to_s] = {
-              size:         File.size(input.to_s),
+              size:         attributes[:size],
               last_checked: Time.zone.now,
               status:       'Watching'
             }

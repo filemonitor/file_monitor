@@ -27,6 +27,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bson_ext'
 gem 'devise'
 gem 'mongoid'
+gem 'secret_config'
 # Encryption
 gem 'symmetric-encryption', '~> 4.1'
 

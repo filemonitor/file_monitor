@@ -321,6 +321,8 @@ GEM
       tilt (>= 1.1, < 3)
     sassc (2.2.1)
       ffi (~> 1.9)
+    secret_config (0.6.4)
+      concurrent-ruby
     selenium-webdriver (3.142.6)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -404,6 +406,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec
   sass-rails (~> 5)
+  secret_config
   selenium-webdriver
   simple_form
   symmetric-encryption (~> 4.1)

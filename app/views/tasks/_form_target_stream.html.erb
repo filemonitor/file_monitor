@@ -25,6 +25,7 @@
       </div>
       <div class='col-md-4'>
         <%= f.input :target_password, label: 'Password' %>
+        <%= f.full_error :encrypted_target_password, class: 'task-error' %>
       </div>
     </div>
   </div>
