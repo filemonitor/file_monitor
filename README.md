@@ -2,8 +2,6 @@
 
 TODO list:
 
-Front End 
-
 * Are we going to have different styles for File Monitor and RJMC?
 * Add localization
 * Add Travis CI?
@@ -15,6 +13,9 @@ Front End
   to task table
 * modify Files part of UI: nested table instead of inspect, fix sizing 
 * How to clean up jobs? I had to go in rails console, otherwise I would have to remove 500 FileMonitorJobs one by one.
+* For now the tool is working only for SFTP to S3 transfer. Extend to another types. The main block: different interfaces for 
+  IOStreams::Paths #each_child method for different streams.
+* Dockerize application  
 
 
 This README would normally document whatever steps are necessary to get the

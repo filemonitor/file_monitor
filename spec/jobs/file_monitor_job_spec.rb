@@ -23,6 +23,8 @@ RSpec.describe FileMonitorJob, type: :job do
     end
   end
 
+  # TODO: Had to comment tests below, bc I want to use FILE stream for testing
+  # TODO: but IOStreams::Paths::SFTP and IOStreams::Paths::FILE have different interfaces.
   # describe 'perform' do
   #   before do
   #     @task = create(
