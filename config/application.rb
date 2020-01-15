@@ -22,7 +22,6 @@ Bundler.require(*Rails.groups)
 
 module FileMonitor
   class Application < Rails::Application
-
     if Rails.env.development? || Rails.env.test?
       # Use application config file
       config.secret_config.use :file
@@ -33,7 +32,6 @@ module FileMonitor
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-
 
     # config.filter_parameters += [:password, :password_confirmation]
 

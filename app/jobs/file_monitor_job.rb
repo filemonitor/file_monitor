@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 #
 # Example:
 # FileMonitorJob.create!
@@ -12,7 +13,7 @@ require 'net/sftp'
 class FileMonitorJob < RocketJob::Job
   include RocketJob::Plugins::Cron
 
-  self.cron_schedule       = '* * * * * UTC' # TODO set to run every minute for testing
+  self.cron_schedule       = '* * * * * UTC' # TODO: set to run every minute for testing
   self.description         = 'File Monitor Job'
   self.destroy_on_complete = false
   self.collect_output      = false
@@ -30,9 +31,9 @@ class FileMonitorJob < RocketJob::Job
           if attributes[:size] == task.files[input.to_s][:size]
 
             RocketJob::Jobs::CopyFileJob.create!(
-              source_url:  input.to_s,
+              source_url: input.to_s,
               source_args: { username: task.source_username, encrypted_password: task.encrypted_source_password },
-              target_url:  target_url(task, input),
+              target_url: target_url(task, input),
               target_args: { access_key_id: task.target_username, encrypted_secret_access_key: task.encrypted_target_password }
             )
 
@@ -43,9 +44,9 @@ class FileMonitorJob < RocketJob::Job
           else
             # size changed
             task.files[input.to_s] = {
-              size:         attributes[:size],
+              size: attributes[:size],
               last_checked: Time.zone.now,
-              status:       'Watching'
+              status: 'Watching'
             }
           end
         else
@@ -55,9 +56,9 @@ class FileMonitorJob < RocketJob::Job
           if task.files[input.to_s].nil? || task.files[input.to_s][:status] != 'Complete'
             # new file seen
             task.files[input.to_s] = {
-              size:         attributes[:size],
+              size: attributes[:size],
               last_checked: Time.zone.now,
-              status:       'Watching'
+              status: 'Watching'
             }
           end
         end
@@ -67,7 +68,7 @@ class FileMonitorJob < RocketJob::Job
   end
 
   def target_url(task, input)
-    #"s3://filemonitor/test/test4.csv",
+    # "s3://filemonitor/test/test4.csv",
     File.join(
       "#{task.target_protocol&.downcase}://", task.target_host, task.task_name, File.basename(input.to_s)
     )
@@ -75,15 +76,16 @@ class FileMonitorJob < RocketJob::Job
 
   def source_directory(task)
     return task.source_host if task.source_protocol == 'FILE'
+
     File.join("#{task.source_protocol&.downcase}://", task.source_host)
   end
 
   def source_credentials(task)
     return nil if task.source_protocol == 'FILE'
+
     {
       username: task.source_username,
       password: task.source_password
     }
   end
 end
-
