@@ -11,9 +11,9 @@
           </div>
         </div>
       </div>
-      <%= f.label 'Target', class: 'task-label' %>
+      <%= f.label t('simple_form.labels.task.target'), class: 'task-label' %>
       <%= render 'form_target_stream', f: f %>
-      <%= f.label 'Source', class: 'task-label' %>
+      <%= f.label t('simple_form.labels.task.source'), class: 'task-label' %>
       <%= render 'form_source_stream', f: f %>
       <div class='form-actions'>
         <%= f.button :submit, class: 'btn-success' %>

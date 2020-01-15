@@ -11,9 +11,18 @@ en:
     error_notification:
       default_message: "Please review the problems below:"
     # Examples
-    # labels:
-    #   defaults:
-    #     password: 'Password'
+    labels:
+      task:
+        target: 'Target'
+        source: 'Source'
+        protocol: 'Protocol'
+        format: 'Format'
+        stream: 'Stream'
+        username: 'Username'
+        password: 'Password'
+        pattern: 'Pattern'
+
+
     #   user:
     #     new:
     #       email: 'E-mail to sign in.'
