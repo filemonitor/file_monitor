@@ -3,15 +3,15 @@
 require 'rails_helper'
 
 RSpec.describe FileMonitorJob, type: :job do
-  let (:job) { FileMonitorJob.new }
+  let (:job) { described_class.new }
 
-  let (:input) { "sftp://sftp.release.clarity.net/test/test.csv" }
+  let (:input) { 'sftp://sftp.release.clarity.net/test/test.csv' }
 
   describe 'target_url' do
     let (:task) { create(:task) }
 
     it 'returns correct target_url' do
-      assert_equal "s3://filemonitor/test/test.csv", job.target_url(task, input)
+      assert_equal 's3://filemonitor/test/test.csv', job.target_url(task, input)
     end
   end
 
@@ -19,7 +19,7 @@ RSpec.describe FileMonitorJob, type: :job do
     let (:task) { create(:task) }
 
     it 'returns correct url' do
-      assert_equal "sftp://sftp.release.clarity.net", job.source_directory(task)
+      assert_equal 'sftp://sftp.release.clarity.net', job.source_directory(task)
     end
   end
 

@@ -30,4 +30,24 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  task:
+    name: 'Task Name:'
+    target_host: 'Target Host:'
+    target_username: 'Target Username:'
+    target_protocol: 'Target Protocol:'
+    target_format: 'Target Format:'
+    target_stream: 'Target Stream:'
+    source_host: 'Source Host:'
+    source_username: 'Source Username:'
+    source_protocol: 'Source Protocol:'
+    source_format: 'Source Format:'
+    source_stream: 'Source Stream:'
+    source_pattern: 'Source Pattern:'
+    files: 'Files:'
+
+  layout:
+    application:
+      title: 'File Monitor'
+    delete_confirmation_modal:
+      confirmation: 'Are you sure?'
+

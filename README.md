@@ -4,7 +4,6 @@ TODO list:
 
 * Are we going to have different styles for File Monitor and RJMC?
 * Add localization
-* Add Travis CI?
 * Add Footer?
 * Look into passwords
 * Review UI: host, task_name, pattern, switch source and target?

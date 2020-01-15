@@ -10,25 +10,25 @@
     </div>
     <div class='row'>
       <div class='col-md-4' class='col-xs-12'>
-        <%= f.input :source_protocol, label: 'Protocol', collection: ['SFTP', 'S3', 'HTTPS', 'FILE'] %>
+        <%= f.input :source_protocol, label: t('simple_form.labels.task.protocol'), collection: ['SFTP', 'S3', 'HTTPS', 'FILE'] %>
       </div>
       <div class='col-md-4' class='col-xs-12'>
-        <%= f.input :source_format, label: 'Format', collection: ['AUTO', 'CSV', 'FIXED WIDTH FORMAT', 'JSON', 'PSV'] %>
+        <%= f.input :source_format, label: t('simple_form.labels.task.format'), collection: ['AUTO', 'CSV', 'FIXED WIDTH FORMAT', 'JSON', 'PSV'] %>
       </div>
       <div class='col-md-4' class='col-xs-12'>
-        <%= f.input :source_stream, label: 'Stream', collection: ['AUTO', 'ZIP', 'GZIP', 'BZIP2', 'CSV', 'PGP (Uses GnuPG)'] %>
+        <%= f.input :source_stream, label: t('simple_form.labels.task.stream'), collection: ['AUTO', 'ZIP', 'GZIP', 'BZIP2', 'CSV', 'PGP (Uses GnuPG)'] %>
       </div>
     </div>
     <div class='row'>
       <div class='col-md-4' class='col-xs-12'>
-        <%= f.input :source_username, label: 'Username' %>
+        <%= f.input :source_username, label: t('simple_form.labels.task.username') %>
       </div>
       <div class='col-md-4' class='col-xs-12'>
-        <%= f.input :source_password, label: 'Password' %>
-        <%= f.full_error :encrypted_source_password, class: 'task-error' %>
+        <%= f.input :source_password, label: t('simple_form.labels.task.password') %>
+        <%= f.full_error :encrypted_source_password, class: 'simple_form.labels.task-error' %>
       </div>
       <div class='col-md-4' class='col-xs-12'>
-        <%= f.input :source_pattern, label: 'Pattern' %>
+        <%= f.input :source_pattern, label: t('simple_form.labels.task.pattern') %>
       </div>
     </div>
   </div>
