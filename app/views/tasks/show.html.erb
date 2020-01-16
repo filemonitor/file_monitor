@@ -1,105 +1,70 @@
 <!DOCTYPE html>
 <div class='container'>
+  <div class='task-margin-top'></div>
   <div class='row justify-content-center'>
-    <div class='col-10'>
-      <div class='task-margin-top'></div>
-      <div class='row justify-content-center mb-1'>
-        <div class='card mb-8 card-task'>
-          <div class='card-body'>
-            <h4><%= @task.task_name %></h4>
+    <div class='card mb-12 card-task'>
+      <div class='card-body'>
+        <div class='row justify-content-center'>
+          <div class='col-12 task-show-title'>
+            <%= @task.task_name %>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-12'>
             <% if @task.files.present? %>
-            <table class='table-striped'>
-              <thead class='task-thead'>
-              <tr>
-                <th class='task-th task-label'>Name</th>
-                <th class='task-th task-label'>Size</th>
-                <th class='task-th task-label'>Last checked</th>
-                <th class='task-th task-label'>Status</th>
-              </tr>
-              </thead>
-              <tbody>
-              <% @task.files.each do |key, value| %>
-              <tr>
-                <td class='task-td-show'><%= File.basename(key) %></td>
-                <td class='task-td-show'><%= value[:size] %></td>
-                <td class='task-td-show'><%= value[:last_checked] %></td>
-                <td class='task-td-show'><%= value[:status] %></td>
-              </tr>
-              <% end %>
-              </tbody>
-            </table>
+              <div class='task-margin-top'></div>
+              <table class='table-striped'>
+                <thead class='task-thead'>
+                <tr>
+                  <th class='task-th task-label'>Name</th>
+                  <th class='task-th task-label'>Size</th>
+                  <th class='task-th task-label'>Last checked</th>
+                  <th class='task-th task-label'>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @task.files.each do |key, value| %>
+                  <tr>
+                    <td class='task-td-show'><%= File.basename(key) %></td>
+                    <td class='task-td-show'><%= value[:size] %></td>
+                    <td class='task-td-show'><%= value[:last_checked] %></td>
+                    <td class='task-td-show'><%= value[:status] %></td>
+                  </tr>
+                <% end %>
+                </tbody>
+              </table>
             <% end %>
+            <div class='task-margin-top'></div>
+            <div>
+              <%= t('task.target') %>
+            </div>
 
-            <table class='table-striped'>
-              <thead class='task-thead'>
-              <tr>
-                <th class='task-th task-label'><%= t('task.target') %></th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td class='task-td-show task-label'><%= t('task.target_host') %></td>
-                <td class='task-td-show'><%= @task.target_host %></td>
-              </tr>
-              <tr>
-                <td class='task-td-show task-label'><%= t('task.target_pattern') %></td>
-                <td class='task-td-show'><%= @task.target_pattern %></td>
-              </tr>
-              <tr>
-                <td class='task-td-show task-label'><%= t('task.target_username') %></td>
-                <td class='task-td-show'><%= @task.target_username %></td>
-              </tr>
-              <tr>
-                <td class='task-td-show task-label'><%= t('task.target_protocol') %></td>
-                <td class='task-td-show'><%= @task.target_protocol %></td>
-              </tr>
-              <tr>
-                <td class='task-td-show task-label'><%= t('task.target_format') %></td>
-                <td class='task-td-show'><%= @task.target_format %></td>
-              </tr>
-              <tr>
-                <td class='task-td-show task-label'><%= t('task.target_stream') %></td>
-                <td class='task-td-show'><%= @task.target_stream %></td>
-              </tr>
-              </tbody>
-            </table>
-            <table class='table-striped'>
-              <thead class='task-thead'>
-              <tr>
-                <th class='task-th task-label'><%= t('task.source') %></th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td class='task-td-show task-label'><%= t('task.source_host') %></td>
-                <td class='task-td-show'><%= @task.source_host %></td>
-              </tr>
-              <tr>
-                <td class='task-td-show task-label'><%= t('task.source_username') %></td>
-                <td class='task-td-show'><%= @task.source_username %></td>
-              </tr>
-              <tr>
-                <td class='task-td-show task-label'><%= t('task.source_protocol') %></td>
-                <td class='task-td-show'><%= @task.source_protocol %></td>
-              </tr>
-              <tr>
-                <td class='task-td-show task-label'><%= t('task.source_format') %></td>
-                <td class='task-td-show'><%= @task.source_format %></td>
-              </tr>
-              <tr>
-                <td class='task-td-show task-label'><%= t('task.source_stream') %></td>
-                <td class='task-td-show'><%= @task.source_stream %></td>
-              </tr>
-              <tr>
-                <td class='task-td-show task-label'><%= t('task.source_pattern') %></td>
-                <td class='task-td-show'><%= @task.source_pattern %></td>
-              </tr>
-              </tbody>
-            </table>
+            <ul class='list-group list-group-flush'>
+              <li class='list-group-item'><%= t('task.target_host') %> <%= @task.target_host %></li>
+              <li class='list-group-item'><%= t('task.target_pattern') %> <%= @task.target_pattern %></li>
+              <li class='list-group-item'><%= t('task.target_username') %> <%= @task.target_username %></li>
+              <li class='list-group-item'><%= t('task.target_protocol') %> <%= @task.target_protocol %></li>
+              <li class='list-group-item'><%= t('task.target_format') %> <%= @task.target_format %></li>
+              <li class='list-group-item'><%= t('task.target_stream') %> <%= @task.target_stream %></li>
+            </ul>
+            <div class='task-margin-top'></div>
+            <div>
+              <%= t('task.source') %>
+            </div>
+
+            <ul class='list-group list-group-flush'>
+              <li class='list-group-item'><%= t('task.source_host') %> <%= @task.source_host %></li>
+              <li class='list-group-item'><%= t('task.source_pattern') %> <%= @task.source_pattern %></li>
+              <li class='list-group-item'><%= t('task.source_username') %> <%= @task.source_username %></li>
+              <li class='list-group-item'><%= t('task.source_protocol') %> <%= @task.source_protocol %></li>
+              <li class='list-group-item'><%= t('task.source_format') %> <%= @task.source_format %></li>
+              <li class='list-group-item'><%= t('task.source_stream') %> <%= @task.source_stream %></li>
+            </ul>
             <div class='task-margin-bottom'></div>
             <div class='form-actions'>
               <%= link_to 'Edit', edit_task_path(@task), class: 'btn btn-success' %>
               <%= link_to 'Back', tasks_path, class: 'btn btn-light' %>
+              <%= link_to 'Destroy', @task, :class => 'btn btn-danger btn-sm active', :data => { :toggle => 'modal', :target => "#exampleModal#{@task.id}" } %>
             </div>
           </div>
         </div>
