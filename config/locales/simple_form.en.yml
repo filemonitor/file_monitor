@@ -18,8 +18,12 @@ en:
         protocol: 'Protocol'
         format: 'Format'
         stream: 'Stream'
-        username: 'Username'
-        password: 'Password'
+        target_username: 'Access Key ID'
+        target_password: 'Secret Access Key'
+        target_host: 'Bucket'
+        source_username: 'Username'
+        source_password: 'Password'
+        source_host: 'Host'
         pattern: 'Pattern'
 
 

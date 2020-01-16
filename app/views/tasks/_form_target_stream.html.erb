@@ -2,7 +2,7 @@
   <div class='panel-body form-panel-body'>
     <div class='row form-section-line'>
       <div class='col-md-4' class='col-xs-12'>
-        <%= f.label :target_host, label: 'Host' %>
+        <%= f.label :target_host, label: t('simple_form.labels.task.target_host') %>
       </div>
       <div class='col-md-8' class='col-xs-12'>
         <%= f.input_field :target_host, class: 'form-input' %>
@@ -20,11 +20,14 @@
       </div>
     </div>
     <div class='row'>
-      <div class='col-md-4'>
-        <%= f.input :target_username, label: t('simple_form.labels.task.username') %>
+      <div class='col-md-4' class='col-xs-12'>
+        <%= f.input :target_pattern, label: t('simple_form.labels.task.pattern') %>
       </div>
       <div class='col-md-4'>
-        <%= f.input :target_password, label: t('simple_form.labels.task.password') %>
+        <%= f.input :target_username, label: t('simple_form.labels.task.target_username') %>
+      </div>
+      <div class='col-md-4'>
+        <%= f.input :target_password, label: t('simple_form.labels.task.target_password') %>
         <%= f.full_error :encrypted_target_password, class: 'task-error' %>
       </div>
     </div>

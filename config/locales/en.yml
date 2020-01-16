@@ -31,18 +31,21 @@
 
 en:
   task:
-    name: 'Task Name:'
-    target_host: 'Target Host:'
-    target_username: 'Target Username:'
-    target_protocol: 'Target Protocol:'
-    target_format: 'Target Format:'
-    target_stream: 'Target Stream:'
-    source_host: 'Source Host:'
-    source_username: 'Source Username:'
-    source_protocol: 'Source Protocol:'
-    source_format: 'Source Format:'
-    source_stream: 'Source Stream:'
-    source_pattern: 'Source Pattern:'
+    title: 'Tasks:'
+    target: 'Target:'
+    target_host: 'Bucket:'
+    target_username: 'Access Key ID:'
+    target_protocol: 'Protocol:'
+    target_format: 'Format:'
+    target_stream: 'Stream:'
+    target_pattern: 'Pattern:'
+    source: 'Source:'
+    source_host: 'Host:'
+    source_username: 'Username:'
+    source_protocol: 'Protocol:'
+    source_format: 'Format:'
+    source_stream: 'Stream:'
+    source_pattern: 'Pattern:'
     files: 'Files:'
 
   layout:
