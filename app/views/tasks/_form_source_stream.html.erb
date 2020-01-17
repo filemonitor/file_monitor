@@ -2,7 +2,7 @@
   <div class='panel-body form-panel-body'>
     <div class='row form-section-line'>
       <div class='col-md-4' class='col-xs-12'>
-        <%= f.label :source_host, label: 'Host' %>
+        <%= f.label :source_host, label: t('simple_form.labels.task.source_host') %>
       </div>
       <div class='col-md-8' class='col-xs-12'>
         <%= f.input_field :source_host, class: 'form-input' %>
@@ -21,14 +21,14 @@
     </div>
     <div class='row'>
       <div class='col-md-4' class='col-xs-12'>
-        <%= f.input :source_username, label: t('simple_form.labels.task.username') %>
-      </div>
-      <div class='col-md-4' class='col-xs-12'>
-        <%= f.input :source_password, label: t('simple_form.labels.task.password') %>
-        <%= f.full_error :encrypted_source_password, class: 'simple_form.labels.task-error' %>
-      </div>
-      <div class='col-md-4' class='col-xs-12'>
         <%= f.input :source_pattern, label: t('simple_form.labels.task.pattern') %>
+      </div>
+      <div class='col-md-4' class='col-xs-12'>
+        <%= f.input :source_username, label: t('simple_form.labels.task.source_username') %>
+      </div>
+      <div class='col-md-4' class='col-xs-12'>
+        <%= f.input :source_password, label: t('simple_form.labels.task.source_password') %>
+        <%= f.full_error :encrypted_source_password, class: 'task-error' %>
       </div>
     </div>
   </div>

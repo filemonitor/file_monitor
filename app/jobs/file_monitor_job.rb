@@ -70,7 +70,7 @@ class FileMonitorJob < RocketJob::Job
   def target_url(task, input)
     # "s3://filemonitor/test/test4.csv",
     File.join(
-      "#{task.target_protocol&.downcase}://", task.target_host, task.task_name, File.basename(input.to_s)
+      "#{task.target_protocol&.downcase}://", task.target_host, task.target_pattern, File.basename(input.to_s)
     )
   end
 

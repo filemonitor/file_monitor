@@ -2,8 +2,9 @@
 
 FactoryBot.define do
   factory :task do
-    task_name { 'test' }
+    task_name { 'Test Task' }
     target_host { 'filemonitor' }
+    target_pattern { 'test' }
     target_protocol { 'S3' }
     target_format { 'AUTO' }
     target_stream { 'AUTO' }

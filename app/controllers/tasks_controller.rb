@@ -80,6 +80,7 @@ class TasksController < ApplicationController
         :target_stream,
         :target_username,
         :target_password,
+        :target_pattern,
         :source_host,
         :source_protocol,
         :source_format,
