@@ -15,7 +15,9 @@ TODO list:
 * For now the tool is working only for SFTP to S3 transfer. Extend to another types. The main block: different interfaces for 
   IOStreams::Paths #each_child method for different streams.
 * Dockerize application
-* Improve email look/language  
+* Improve email look/language
+* Better error handeling/error propagation. For example, FileMonitorJob just stays in `running` state, when authentication is failed due to wrong password, etc 
+* specs for UI 
 
 
 This README would normally document whatever steps are necessary to get the
