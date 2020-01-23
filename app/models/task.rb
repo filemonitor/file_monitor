@@ -38,5 +38,4 @@ class Task
   # TODO: and idk if we should be able to do irt, or not
   # validates :encrypted_target_password,
   #           :encrypted_source_password, uniqueness: true
-  
 end

@@ -31,31 +31,31 @@ module FileMonitor
     end
 
     # Rocket Job
-    config.rocket_job.include_filter    = config.secret_config["rocket_job/include_filter"]
-    config.rocket_job.exclude_filter    = config.secret_config["rocket_job/exclude_filter"]
-    config.rocket_job.where_filter      = config.secret_config.fetch("rocket_job/where_filter", type: :json, default: nil)
-    config.rocket_job.max_workers       = config.secret_config.fetch("rocket_job/max_workers", type: :integer, default: 10)
-    config.rocket_job.heartbeat_seconds = config.secret_config.fetch("rocket_job/heartbeat_seconds", type: :float, default: 15.0)
-    config.rocket_job.max_poll_seconds  = config.secret_config.fetch("rocket_job/max_poll_seconds", type: :float, default: 5.0)
-    config.rocket_job.re_check_seconds  = config.secret_config.fetch("rocket_job/re_check_seconds", type: :float, default: 60.0)
+    config.rocket_job.include_filter    = config.secret_config['rocket_job/include_filter']
+    config.rocket_job.exclude_filter    = config.secret_config['rocket_job/exclude_filter']
+    config.rocket_job.where_filter      = config.secret_config.fetch('rocket_job/where_filter', type: :json, default: nil)
+    config.rocket_job.max_workers       = config.secret_config.fetch('rocket_job/max_workers', type: :integer, default: 10)
+    config.rocket_job.heartbeat_seconds = config.secret_config.fetch('rocket_job/heartbeat_seconds', type: :float, default: 15.0)
+    config.rocket_job.max_poll_seconds  = config.secret_config.fetch('rocket_job/max_poll_seconds', type: :float, default: 5.0)
+    config.rocket_job.re_check_seconds  = config.secret_config.fetch('rocket_job/re_check_seconds', type: :float, default: 60.0)
 
     # Logging
-    config.log_level                       = config.secret_config.fetch("logger/level", default: :info, type: :symbol)
-    config.semantic_logger.backtrace_level = config.secret_config.fetch("logger/backtrace_level", default: :error, type: :symbol)
-    config.semantic_logger.application     = config.secret_config.fetch("logger/application", default: "file-monitor")
-    config.semantic_logger.environment     = config.secret_config.fetch("logger/environment", default: Rails.env)
+    config.log_level                       = config.secret_config.fetch('logger/level', default: :info, type: :symbol)
+    config.semantic_logger.backtrace_level = config.secret_config.fetch('logger/backtrace_level', default: :error, type: :symbol)
+    config.semantic_logger.application     = config.secret_config.fetch('logger/application', default: 'file-monitor')
+    config.semantic_logger.environment     = config.secret_config.fetch('logger/environment', default: Rails.env)
 
-    destination = config.secret_config.fetch("logger/destination", default: :file, type: :symbol)
+    destination = config.secret_config.fetch('logger/destination', default: :file, type: :symbol)
     if destination == :stdout
       STDOUT.sync                                    = true
       config.rails_semantic_logger.add_file_appender = false
       config.semantic_logger.add_appender(
-        io:        STDOUT,
-        level:     config.log_level,
-        formatter: config.secret_config.fetch("logger/formatter", default: :default, type: :symbol)
+        io: STDOUT,
+        level: config.log_level,
+        formatter: config.secret_config.fetch('logger/formatter', default: :default, type: :symbol)
       )
     end
-    config.rails_semantic_logger.ap_options = {ruby19_syntax: true, multiline: false}
+    config.rails_semantic_logger.ap_options = { ruby19_syntax: true, multiline: false }
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
