@@ -42,8 +42,20 @@ module FileMonitor
     # Logging
     config.log_level                       = config.secret_config.fetch("logger/level", default: :info, type: :symbol)
     config.semantic_logger.backtrace_level = config.secret_config.fetch("logger/backtrace_level", default: :error, type: :symbol)
-    config.semantic_logger.application     = config.secret_config.fetch("logger/application", default: "batch")
+    config.semantic_logger.application     = config.secret_config.fetch("logger/application", default: "file-monitor")
     config.semantic_logger.environment     = config.secret_config.fetch("logger/environment", default: Rails.env)
+
+    destination = config.secret_config.fetch("logger/destination", default: :file, type: :symbol)
+    if destination == :stdout
+      STDOUT.sync                                    = true
+      config.rails_semantic_logger.add_file_appender = false
+      config.semantic_logger.add_appender(
+        io:        STDOUT,
+        level:     config.log_level,
+        formatter: config.secret_config.fetch("logger/formatter", default: :default, type: :symbol)
+      )
+    end
+    config.rails_semantic_logger.ap_options = {ruby19_syntax: true, multiline: false}
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
