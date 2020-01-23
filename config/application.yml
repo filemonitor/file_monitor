@@ -3,8 +3,37 @@ development:
     key:     TJMAXEVGMTIzNDU2Nzg5MEFCQ0RFRjEyMzQ1Njc22TB=
     iv:      TJMAXEVGMTIzNDU2Nzg5MB==
     version: 1
+
+  mongo:
+    primary:
+      database: file_monitor_development
+      host:  127.0.0.1:27017
+    rocketjob:
+      database: rocketjob_development
+      host:  127.0.0.1:27017
+
+  logger:
+    level:           debug
+    backtrace_level: debug
+    # file or stdout
+    destination:     file
+    # default, color, json
+    formatter:       color
+
 test:
   symmetric_encryption:
     key:     TJMAXEVGMTIzNDU2Nzg5MEFCQ0RFRjEyMzQ1Njc22TB=
     iv:      TJMAXEVGMTIzNDU2Nzg5MB==
     version: 1
+
+  mongo:
+    primary:
+      database: file_monitor_test
+      host:  127.0.0.1:27017
+    rocketjob:
+      database: rocketjob_test
+      host:  127.0.0.1:27017
+
+  logger:
+    level:           info
+    backtrace_level: warn
