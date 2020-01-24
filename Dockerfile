@@ -31,29 +31,35 @@
 #   docker system prune -f
 #
 
-#
-# Build Connect Web Container.
-#
 FROM ruby:2.6.2
 
-# Copy application code
-COPY . /application
+# The best practice is to put commands together to avoid the layers within the image
+# and decrease the image size, but it my case image size stayed the same.
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+    apt-get install sshpass && \
+    gem install bundler
+
+RUN mkdir /application
+
+# Note that installing OS-specific tools and copying only Gemfile and Gemfile.lock
+# to app folder before running bundle install has tremendous advantage. Changes to the other
+# files within the application folder do not trigger bundle install.
+# Only if the Gemfile or Gemfile.lock changes, bundle install will be triggered.
+# from https://auth0.com/blog/ruby-on-rails-killer-workflow-with-docker-part-1/
+
+COPY Gemfile Gemfile.lock /application/
+
 # Change to the application's directory
 WORKDIR /application
 
 # Install gems
 RUN bundle install --deployment --without development test --jobs 4 --retry 5
 
+# Copy application code
+COPY . /application
+
 # Set Rails environment to production
 ENV RAILS_ENV production
-
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
-# RUN curl -sL https://dl.yarnpkg.com/rpm/yarn.repo
-# RUN rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
-# RUN yarn install --check-files
-
-RUN apt-get install sshpass
-
 
 # Compile the assets TODO
 #RUN bundle exec rake assets:precompile
