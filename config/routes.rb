@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     get 'login', to: 'devise/sessions#new'
   end
 
+  scope :admin do
+    get :health_check, to: 'admin/monitor#health_check'
+  end
+
   mount RocketJobMissionControl::Engine => 'rocketjob'
 end

@@ -10,8 +10,8 @@
 #  Start Rocket Job:
 #   docker run -it --rm  --env-file config/local.env file-monitor bin/rocketjob
 
-#  Run some load: # TODO figure out healthcheck
-#    ab -n 100 -c 3 127.0.0.1:3000/inquiries/health_check
+#  Run some load: 
+#    ab -n 100 -c 3 127.0.0.1:3000/admin/health_check
 #
 #  Start a shell:
 #   docker run -it --rm --env-file config/local.env file-monitor bash
