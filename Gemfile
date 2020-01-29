@@ -41,7 +41,17 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  # TODO ask Reid
+  # TODO: I commented out 'listen' gem and related code in development.rb, bc I am testing docker
+  # TODO: in development environment locally. I have to use development bc otherwise I will run into
+  # TODO: problems with following code in application.rb
+  # if Rails.env.development? || Rails.env.test?
+  #       # Use application config file
+  #       config.secret_config.use :file
+  #     else
+  #       # Read configuration from AWS SSM Parameter Store
+  #       config.secret_config.use :ssm
+  #     end
+
   # gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
 end
