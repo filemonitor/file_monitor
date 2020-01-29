@@ -51,7 +51,10 @@ class FileMonitorJob < RocketJob::Job
                 }
               },
               target_url: target_url(task, input),
-              target_args: { access_key_id: task.target_username, encrypted_secret_access_key: task.encrypted_target_password }
+              target_args: {
+                access_key_id: task.target_username,
+                encrypted_secret_access_key: task.encrypted_target_password
+              }
             )
 
             task.files[input.to_s][:status]       = 'Complete'
@@ -86,15 +89,17 @@ class FileMonitorJob < RocketJob::Job
 
   def target_url(task, input)
     # "s3://filemonitor/test/test4.csv",
+    # TODO: think about switching to IOStreams.path
     File.join(
       "#{task.target_protocol&.downcase}://", task.target_host, task.target_pattern, File.basename(input.to_s)
-    )
+    ).to_s
   end
 
   def source_directory(task)
     return task.source_host if task.source_protocol == 'FILE'
 
-    File.join("#{task.source_protocol&.downcase}://", task.source_host)
+    # TODO: think about switching to IOStreams.path
+    File.join("#{task.source_protocol&.downcase}://", task.source_host).to_s
   end
 
   def source_credentials(task)
