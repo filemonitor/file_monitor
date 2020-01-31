@@ -37,7 +37,7 @@ FROM ruby:2.6.2
 # and decrease the image size, but it my case image size stayed the same.
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
     apt-get install sshpass && \
-    gem install bundler
+    gem install bundler -v 2.0.2 --no-doc
 
 RUN mkdir /application
 
@@ -47,16 +47,14 @@ RUN mkdir /application
 # Only if the Gemfile or Gemfile.lock changes, bundle install will be triggered.
 # from https://auth0.com/blog/ruby-on-rails-killer-workflow-with-docker-part-1/
 
-COPY Gemfile Gemfile.lock /application/
+# Copy application code
+COPY . /application
 
 # Change to the application's directory
 WORKDIR /application
 
 # Install gems
 RUN bundle install --deployment --without development test --jobs 4 --retry 5
-
-# Copy application code
-COPY . /application
 
 # Set Rails environment to production
 ENV RAILS_ENV production

@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.2'
+gem 'rake'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
@@ -27,6 +28,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bson_ext'
 gem 'devise'
 gem 'mongoid'
+
 gem 'secret_config'
 # Encryption
 gem 'symmetric-encryption', '~> 4.1'
@@ -82,6 +84,7 @@ gem 'simple_form'
 
 # File storage
 gem 'aws-sdk-s3', '~> 1.43'
+gem 'aws-sdk-ssm'
 gem 'iostreams', git: 'https://github.com/rocketjob/iostreams.git'
 
 # RocketJob gems

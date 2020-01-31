@@ -2,17 +2,27 @@ version: '3.7'
 services:
   mongo:
     image: mongo:3.6
-    ports:
-    - 127.0.0.1:27017:27017
 
   web:
-    build: .
-    command: bin/rails server --port 3000 --binding 0.0.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     ports:
     - "3000:3000"
-    links:
+    depends_on:
     - mongo
     volumes:
     - .:/application
+    environment:
+      RAILS_ENV: development
+      AWS_REGION: us-east-1
+      MONGO_PRIMARY_HOST: mongo
+      MONGO_ROCKETJOB_HOST: mongo
 
-  rocketjob:
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/admin/health_check"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+
