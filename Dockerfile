@@ -47,14 +47,16 @@ RUN mkdir /application
 # Only if the Gemfile or Gemfile.lock changes, bundle install will be triggered.
 # from https://auth0.com/blog/ruby-on-rails-killer-workflow-with-docker-part-1/
 
-# Copy application code
-COPY . /application
+COPY Gemfile Gemfile.lock /application/
 
 # Change to the application's directory
 WORKDIR /application
 
 # Install gems
 RUN bundle install --deployment --without development test --jobs 4 --retry 5
+
+# Copy application code
+COPY . /application
 
 # Set Rails environment to production
 ENV RAILS_ENV production

@@ -1,3 +1,28 @@
+#  If you make changes to the Gemfile or the Compose file to try out some different configurations,
+#  you need to rebuild. Some changes require only docker-compose up --build, but a full rebuild
+#  requires a re-run of docker-compose run web bundle install to sync changes in the Gemfile.lock
+#  to the host, followed by docker-compose up --build.
+#  https://docs.docker.com/compose/rails/
+
+# Full re-build to sync changes in the Gemfile.lock:
+#
+# docker-compose run web bundle install
+#
+# Re-build
+#
+# docker-compose up --build
+#
+# Run application:
+#
+# docker-compose up
+#
+# Stop application:
+#
+# docker-compose down
+#
+
+
+
 version: '3.7'
 services:
   mongo:
