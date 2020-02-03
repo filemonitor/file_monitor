@@ -18,6 +18,8 @@ TODO list:
 * Improve email look/language
 * Better error handeling/error propagation. For example, FileMonitorJob just stays in `running` state, when authentication is failed due to wrong password, etc 
 * specs for UI 
+* UI: Error notifications on login page
+* Fix resizing of New Task form
 
 
 This README would normally document whatever steps are necessary to get the

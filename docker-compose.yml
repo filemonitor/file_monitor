@@ -1,0 +1,54 @@
+#  If you make changes to the Gemfile or the Compose file to try out some different configurations,
+#  you need to rebuild. Some changes require only docker-compose up --build, but a full rebuild
+#  requires a re-run of docker-compose run web bundle install to sync changes in the Gemfile.lock
+#  to the host, followed by docker-compose up --build.
+#  https://docs.docker.com/compose/rails/
+
+# Full re-build to sync changes in the Gemfile.lock:
+#
+# docker-compose run web bundle install
+#
+# Re-build
+#
+# docker-compose up --build
+#
+# Run application:
+#
+# docker-compose up
+#
+# Stop application:
+#
+# docker-compose down
+#
+
+
+
+version: '3.7'
+services:
+  mongo:
+    image: mongo:3.6
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    ports:
+    - "3000:3000"
+    depends_on:
+    - mongo
+    volumes:
+    - .:/application
+    - ./data:/data/db
+    environment:
+      RAILS_ENV: development
+      AWS_REGION: us-east-1
+      MONGO_PRIMARY_HOST: mongo
+      MONGO_ROCKETJOB_HOST: mongo
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/admin/health_check"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+

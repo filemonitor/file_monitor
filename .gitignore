@@ -23,6 +23,8 @@
 /public/packs
 /public/packs-test
 /node_modules
+/vendor/*
+!/vendor/.keep
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity

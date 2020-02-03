@@ -1,0 +1,14 @@
+.byebug_history
+.generators
+.gitignore
+.dockerignore
+.travis.yml
+LICENSE.md
+README.md
+docker-compose.*
+Dockerfile
+log/*
+node_modules/*
+public/assets/*
+public/packs-test/*
+tmp/*

@@ -17,16 +17,13 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bson_ext'
 gem 'devise'
 gem 'mongoid'
+
 gem 'secret_config'
 # Encryption
 gem 'symmetric-encryption', '~> 4.1'
@@ -41,7 +38,18 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  # TODO: I commented out 'listen' gem and related code in development.rb, bc I am testing docker
+  # TODO: in development environment locally. I have to use development bc otherwise I will run into
+  # TODO: problems with following code in application.rb
+  # if Rails.env.development? || Rails.env.test?
+  #       # Use application config file
+  #       config.secret_config.use :file
+  #     else
+  #       # Read configuration from AWS SSM Parameter Store
+  #       config.secret_config.use :ssm
+  #     end
+
+  # gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
 end
 
@@ -71,6 +79,7 @@ gem 'simple_form'
 
 # File storage
 gem 'aws-sdk-s3', '~> 1.43'
+gem 'aws-sdk-ssm'
 gem 'iostreams', git: 'https://github.com/rocketjob/iostreams.git'
 
 # RocketJob gems

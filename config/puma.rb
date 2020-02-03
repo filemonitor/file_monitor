@@ -19,7 +19,14 @@ port        ENV.fetch('PORT') { 3000 }
 environment ENV.fetch('RAILS_ENV') { 'development' }
 
 # Specifies the `pidfile` that Puma will use.
-pidfile ENV.fetch('PIDFILE') { 'tmp/pids/server.pid' }
+# TODO : discuss with Reid 2 solutions:
+# 1 ) remove the line (that is what I did)
+# 2 ) suggetstion below.
+# I think if you just rails server --pid /tmp/server.pid, you'll be fine.
+# This will put the pid file in the system tmp dir rather than the app tmp dir.
+# System tmp dir is cleared on reboot.
+
+# pidfile ENV.fetch('PIDFILE') { 'tmp/pids/server.pid' }
 
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked web server processes. If using threads and workers together
