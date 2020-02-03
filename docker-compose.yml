@@ -39,6 +39,7 @@ services:
     - mongo
     volumes:
     - .:/application
+    - ./data:/data/db
     environment:
       RAILS_ENV: development
       AWS_REGION: us-east-1
