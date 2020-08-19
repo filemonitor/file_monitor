@@ -5,21 +5,127 @@ require 'rails_helper'
 RSpec.describe FileMonitorJob, type: :job do
   let (:job) { described_class.new }
 
-  let (:input) { 'sftp://sftp.release.clarity.net/test/test.csv' }
-
   describe 'target_url' do
     let (:task) { create(:task) }
 
-    it 'returns correct target_url' do
-      assert_equal 's3://filemonitor/test/test.csv', job.target_url(task, input)
+    describe 'S3 protocol' do
+      it 'returns correct target_url' do
+        input = 's3://sftp.release.clarity.net/test/test.csv'
+        assert_equal 's3://filemonitor/test/test.csv', job.target_url(task, input)
+      end
+    end
+
+    describe 'SFTP protocol' do
+      it 'returns correct target_url' do
+        task.target_host ='sftp.release.clarity.net'
+        task.target_pattern = 'test/*'
+        input = 's3://filemonitor/test/test.csv'
+        assert_equal 'sftp://sftp.release.clarity.net/test/test.csv', job.target_url(task, input)
+      end
     end
   end
 
   describe 'source_directory' do
     let (:task) { create(:task) }
 
-    it 'returns correct url' do
-      assert_equal 'sftp://sftp.release.clarity.net', job.source_directory(task)
+    describe 'SFTP protocol' do
+      it 'returns correct url' do
+        task.target_protocol = 'SFTP'
+
+        assert_equal 'sftp://sftp.release.clarity.net', job.source_directory(task)
+      end
+    end
+
+    describe 'S3 protocol' do
+      it 'returns correct url' do
+        task.source_protocol = 'S3'
+        task.source_host     = 'filemonitor'
+
+        assert_equal 's3://filemonitor', job.source_directory(task)
+      end
+    end
+  end
+
+  describe 'source_credentials' do
+    let (:task) { create(:task) }
+
+    describe 'SFTP protocol' do
+      it 'returns correct source credentials' do
+        expected_args = {
+          username: 'source_username',
+          password: 'source_password',
+          # ssh_options: {
+          #   StrictHostKeyChecking: 'no'
+          # }
+
+        }
+        args          = job.source_credentials(task)
+
+        assert_equal expected_args, args
+      end
+    end
+
+    describe 'S3 protocol' do
+      it 'returns correct source credentials' do
+        task.source_protocol = 'S3'
+        expected_args        = {
+          access_key_id:     'source_username',
+          secret_access_key: 'source_password',
+        }
+        args                 = job.source_credentials(task)
+
+        assert_equal expected_args, args
+      end
+    end
+
+    describe 'FILE protocol' do
+      it 'returns nil' do
+        task.source_protocol = 'FILE'
+
+        assert_nil job.source_credentials(task)
+      end
+    end
+  end
+
+  describe 'target_credentials' do
+    let (:task) { create(:task) }
+
+    describe 'SFTP protocol' do
+      it 'returns correct target credentials' do
+        task.target_protocol = 'SFTP'
+        expected_args        = {
+          username: 'target_username',
+          password: 'target_password',
+          # ssh_options: {
+          #   StrictHostKeyChecking: 'no'
+          # }
+
+        }
+        args                 = job.target_credentials(task)
+
+        assert_equal expected_args, args
+      end
+    end
+
+    describe 'S3 protocol' do
+      it 'returns correct target credentials' do
+        task.target_protocol = 'S3'
+        expected_args        = {
+          access_key_id:     'target_username',
+          secret_access_key: 'target_password',
+        }
+        args                 = job.target_credentials(task)
+
+        assert_equal expected_args, args
+      end
+    end
+
+    describe 'FILE protocol' do
+      it 'returns nil' do
+        task.target_protocol = 'FILE'
+
+        assert_nil job.target_credentials(task)
+      end
     end
   end
 
