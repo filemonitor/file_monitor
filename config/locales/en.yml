@@ -33,19 +33,19 @@ en:
   task:
     title: 'Tasks:'
     target: 'Target:'
-    target_host: 'Bucket:'
+    host: 'Bucket/Host:'
     target_username: 'Access Key ID:'
     target_protocol: 'Protocol:'
     target_format: 'Format:'
     target_stream: 'Stream:'
     target_pattern: 'Pattern:'
     source: 'Source:'
-    source_host: 'Host:'
     source_username: 'Username:'
     source_protocol: 'Protocol:'
     source_format: 'Format:'
     source_stream: 'Stream:'
-    source_pattern: 'Pattern:'
+    pattern: 'Pattern:'
+    directory: 'Directory:'
     files: 'Files:'
 
   layout:

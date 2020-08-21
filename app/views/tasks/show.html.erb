@@ -40,9 +40,13 @@
             </div>
 
             <ul class='list-group list-group-flush'>
-              <li class='list-group-item'><%= t('task.target_host') %> <%= @task.target_host %></li>
-              <li class='list-group-item'><%= t('task.target_pattern') %> <%= @task.target_pattern %></li>
-              <li class='list-group-item'><%= t('task.target_username') %> <%= @task.target_username %></li>
+              <li class='list-group-item'><%= t('task.host') %> <%= @task.target_host %></li>
+              <li class='list-group-item'><%= t('task.directory') %> <%= @task.target_pattern %></li>
+              <% if @task.target_protocol == 'S3' %>
+                <li class='list-group-item'><%= t('task.target_username') %> <%= @task.target_username %></li>
+              <% else %>
+                <li class='list-group-item'><%= t('task.source_username') %> <%= @task.target_username %></li>
+              <% end %>
               <li class='list-group-item'><%= t('task.target_protocol') %> <%= @task.target_protocol %></li>
               <li class='list-group-item'><%= t('task.target_format') %> <%= @task.target_format %></li>
               <li class='list-group-item'><%= t('task.target_stream') %> <%= @task.target_stream %></li>
@@ -53,9 +57,13 @@
             </div>
 
             <ul class='list-group list-group-flush'>
-              <li class='list-group-item'><%= t('task.source_host') %> <%= @task.source_host %></li>
-              <li class='list-group-item'><%= t('task.source_pattern') %> <%= @task.source_pattern %></li>
-              <li class='list-group-item'><%= t('task.source_username') %> <%= @task.source_username %></li>
+              <li class='list-group-item'><%= t('task.host') %> <%= @task.source_host %></li>
+              <li class='list-group-item'><%= t('task.pattern') %> <%= @task.source_pattern %></li>
+              <% if @task.source_protocol == 'S3' %>
+                <li class='list-group-item'><%= t('task.target_username') %> <%= @task.source_username %></li>
+              <% else %>
+                <li class='list-group-item'><%= t('task.source_username') %> <%= @task.source_username %></li>
+              <% end %>
               <li class='list-group-item'><%= t('task.source_protocol') %> <%= @task.source_protocol %></li>
               <li class='list-group-item'><%= t('task.source_format') %> <%= @task.source_format %></li>
               <li class='list-group-item'><%= t('task.source_stream') %> <%= @task.source_stream %></li>
@@ -64,7 +72,7 @@
             <div class='form-actions'>
               <%= link_to 'Edit', edit_task_path(@task), class: 'btn btn-success' %>
               <%= link_to 'Back', tasks_path, class: 'btn btn-light' %>
-              <%= link_to 'Destroy', @task, :class => 'btn btn-danger btn-sm active', :data => { :toggle => 'modal', :target => "#exampleModal#{@task.id}" } %>
+              <%= link_to 'Destroy', @task, :class => 'btn btn-danger btn-sm active', :data => {:toggle => 'modal', :target => "#exampleModal#{@task.id}"} %>
               <%= render 'layouts/delete_confirmation_modal', task: @task %>
             </div>
           </div>
