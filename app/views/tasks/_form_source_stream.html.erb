@@ -1,3 +1,21 @@
+<script>
+  function change_source_label(value) {
+    var x = document.getElementById('task_source_password');
+    var y = x.previousElementSibling;
+    var a = document.getElementById('task_source_username');
+    var b = a.previousElementSibling;
+    console.log('Value:');
+    console.log(value);
+    if (value == 'S3') {
+      y.innerHTML = 'Secret Access Key*';
+      b.innerHTML = 'Access Key ID*';
+    } else {
+      y.innerHTML = 'Password';
+      b.innerHTML = 'Username';
+    }
+    return true;
+  };
+</script>
 <div class='panel panel-default md-8'>
   <div class='panel-body form-panel-body'>
     <div class='row form-section-line'>
@@ -10,7 +28,7 @@
     </div>
     <div class='row'>
       <div class='col-md-4' class='col-xs-12'>
-        <%= f.input :source_protocol, label: t('simple_form.labels.task.protocol'), collection: ['SFTP', 'S3', 'HTTPS', 'FILE'] %>
+        <%= f.input :source_protocol, label: t('simple_form.labels.task.protocol'), collection: ['SFTP', 'S3', 'HTTPS', 'FILE'] , input_html: { onChange: "change_source_label(this.value)"} %>
       </div>
       <div class='col-md-4' class='col-xs-12'>
         <%= f.input :source_format, label: t('simple_form.labels.task.format'), collection: ['AUTO', 'CSV', 'FIXED WIDTH FORMAT', 'JSON', 'PSV'] %>

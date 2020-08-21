@@ -1,8 +1,27 @@
+<script>
+  function change_target_label(value) {
+    var x = document.getElementById('task_target_password');
+    var y = x.previousElementSibling;
+    var a = document.getElementById('task_target_username');
+    var b = a.previousElementSibling;
+    console.log('Value:');
+    console.log(value);
+    if (value == 'S3') {
+      y.innerHTML = 'Secret Access Key*';
+      b.innerHTML = 'Access Key ID*';
+    } else {
+      y.innerHTML = 'Password';
+      b.innerHTML = 'Username';
+    }
+    return true;
+  };
+</script>
+
 <div class='panel panel-default md-8'>
   <div class='panel-body form-panel-body'>
     <div class='row form-section-line'>
       <div class='col-md-4' class='col-xs-12'>
-        <%= f.label :target_host, label: t('simple_form.labels.task.target_host') %>
+        <%= f.label :target_host, label: t('simple_form.labels.task.host') %>
       </div>
       <div class='col-md-8' class='col-xs-12'>
         <%= f.input_field :target_host, class: 'form-input' %>
@@ -10,7 +29,7 @@
     </div>
     <div class='row'>
       <div class='col-md-4'>
-        <%= f.input :target_protocol, label: t('simple_form.labels.task.protocol'), collection: ['SFTP', 'S3', 'HTTPS', 'FILE'] %>
+        <%= f.input :target_protocol, label: t('simple_form.labels.task.protocol'), collection: ['SFTP', 'S3', 'HTTPS', 'FILE'], input_html: { onChange: "change_target_label(this.value)"} %>
       </div>
       <div class='col-md-4'>
         <%= f.input :target_format, label: t('simple_form.labels.task.format'), collection: ['AUTO', 'CSV', 'FIXED WIDTH FORMAT', 'JSON', 'PSV'] %>
@@ -21,7 +40,7 @@
     </div>
     <div class='row'>
       <div class='col-md-4' class='col-xs-12'>
-        <%= f.input :target_pattern, label: t('simple_form.labels.task.pattern') %>
+        <%= f.input :target_pattern, label: t('simple_form.labels.task.directory') %>
       </div>
       <div class='col-md-4'>
         <%= f.input :target_username, label: t('simple_form.labels.task.target_username') %>
