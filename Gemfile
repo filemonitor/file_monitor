@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.2'
+ruby '3.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
@@ -41,7 +41,7 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen', platform: :ruby
   gem 'web-console', '>= 3.3.0'
 end
 
@@ -58,7 +58,7 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
-  gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails', branch: '4-0-maintenance' # Previously '4-0-dev' branch
+  gem 'rspec-rails', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -77,7 +77,7 @@ gem 'iostreams', git: 'https://github.com/rocketjob/iostreams.git'
 # gem 'iostreams', git: 'https://github.com/marc/iostreams'
 gem 'net-sftp'
 gem 'rails_semantic_logger'
-gem 'rocketjob', '~> 5.0.0.beta4'
+gem "rocketjob", ">= 6.0.0.rc1"
 gem 'rocketjob_mission_control'
 
 gem 'letter_opener'
